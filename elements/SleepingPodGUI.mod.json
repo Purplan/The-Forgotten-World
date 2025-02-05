@@ -23,6 +23,9 @@
     "onTick": {
       "name": "SleepingPodGUIWhileThisGUIIsOpenTick"
     },
+    "onClosed": {
+      "name": "SleepingPodGUIThisGUIIsClosed"
+    },
     "gridSettings": {
       "sx": 18,
       "sy": 18,

@@ -20,6 +20,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.minecrafttheforgottenworld.procedures.SleepingPodGUIWhileThisGUIIsOpenTickProcedure;
+import net.mcreator.minecrafttheforgottenworld.procedures.SleepingPodGUIThisGUIIsClosedProcedure;
 import net.mcreator.minecrafttheforgottenworld.init.MinecraftTheForgottenWorldModMenus;
 
 import java.util.function.Supplier;
@@ -71,6 +72,12 @@ public class SleepingPodGUIMenu extends AbstractContainerMenu implements Supplie
 	@Override
 	public ItemStack quickMoveStack(Player playerIn, int index) {
 		return ItemStack.EMPTY;
+	}
+
+	@Override
+	public void removed(Player playerIn) {
+		super.removed(playerIn);
+		SleepingPodGUIThisGUIIsClosedProcedure.execute(entity);
 	}
 
 	public Map<Integer, Slot> get() {

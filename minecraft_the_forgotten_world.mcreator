@@ -854,7 +854,8 @@
           "src/main/resources/data/minecraft_the_forgotten_world/loot_tables/blocks/sleeping_pod.json",
           "src/main/resources/assets/minecraft_the_forgotten_world/blockstates/sleeping_pod.json"
         ]
-      }
+      },
+      "path": "~/SleepingPod"
     },
     {
       "name": "SleepingPodGUI",
@@ -867,7 +868,8 @@
           "src/main/java/net/mcreator/minecrafttheforgottenworld/client/gui/SleepingPodGUIScreen.java",
           "src/main/java/net/mcreator/minecrafttheforgottenworld/world/inventory/SleepingPodGUIMenu.java"
         ]
-      }
+      },
+      "path": "~/SleepingPod"
     },
     {
       "name": "SleepingPodGUIWhileThisGUIIsOpenTick",
@@ -889,7 +891,27 @@
             "type": "map"
           }
         ]
-      }
+      },
+      "path": "~/SleepingPod"
+    },
+    {
+      "name": "SleepingPodGUIThisGUIIsClosed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sleeping_pod_gui_this_gui_is_closed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minecrafttheforgottenworld/procedures/SleepingPodGUIThisGUIIsClosedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SleepingPod"
     }
   ],
   "variable_elements": [
@@ -961,9 +983,9 @@
       "item.minecraft_the_forgotten_world.hazmat_suit_armor_chestplate": "Hazmat Suit Chestplate",
       "death.attack.radioactive_water_damage.player": "%1$s died whilst trying to escape %2$s",
       "item.minecraft_the_forgotten_world.technoblade.desc": "\"Mega Walls\" by Technoblade",
-      "block.minecraft_the_forgotten_world.uranium": "Uranium Ore",
-      "item.minecraft.lingering_potion.effect.radioactive_potion": "Lingering Potion of Radioactive Potion",
       "block.minecraft_the_forgotten_world.time_machine": "Time Machine",
+      "item.minecraft.lingering_potion.effect.radioactive_potion": "Lingering Potion of Radioactive Potion",
+      "block.minecraft_the_forgotten_world.uranium": "Uranium Ore",
       "item.minecraft.tipped_arrow.effect.radioactive_potion": "Arrow of Radioactive Potion",
       "item.minecraft_the_forgotten_world.hazmat_suit_armor_leggings": "Hazmat Suit Leggings",
       "block.minecraft_the_forgotten_world.uk_flag": "UK Flag",
@@ -1011,9 +1033,9 @@
       "item.minecraft_the_forgotten_world.hazmat_suit_armor_chestplate": "Peto de traje de materiales peligrosos",
       "death.attack.radioactive_water_damage.player": "%1$s murió mientras intentaba escapar de %2$s",
       "item.minecraft_the_forgotten_world.technoblade.desc": "\"Mega Walls\" de Technoblade",
-      "block.minecraft_the_forgotten_world.uranium": "Mineral de uranio",
-      "item.minecraft.lingering_potion.effect.radioactive_potion": "Poción persistente de poción radiactiva",
       "block.minecraft_the_forgotten_world.time_machine": "maquina del tiempo",
+      "item.minecraft.lingering_potion.effect.radioactive_potion": "Poción persistente de poción radiactiva",
+      "block.minecraft_the_forgotten_world.uranium": "Mineral de uranio",
       "item.minecraft.tipped_arrow.effect.radioactive_potion": "Flecha de poción radiactiva",
       "item.minecraft_the_forgotten_world.hazmat_suit_armor_leggings": "Traje de materiales peligrosos Leggings",
       "block.minecraft_the_forgotten_world.uk_flag": "Bandera del Reino Unido",
@@ -1062,6 +1084,10 @@
     "children": [
       {
         "name": "RadioActiveBiome",
+        "children": []
+      },
+      {
+        "name": "SleepingPod",
         "children": []
       }
     ]
