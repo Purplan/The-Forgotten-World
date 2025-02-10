@@ -13,6 +13,7 @@ import net.minecraft.client.gui.screens.MenuScreens;
 
 import net.mcreator.minecrafttheforgottenworld.client.gui.TimeMachineGUIScreen;
 import net.mcreator.minecrafttheforgottenworld.client.gui.SleepingPodGUIScreen;
+import net.mcreator.minecrafttheforgottenworld.client.gui.NukeLaunchPadGUIScreen;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class MinecraftTheForgottenWorldModScreens {
@@ -21,6 +22,7 @@ public class MinecraftTheForgottenWorldModScreens {
 		event.enqueueWork(() -> {
 			MenuScreens.register(MinecraftTheForgottenWorldModMenus.TIME_MACHINE_GUI.get(), TimeMachineGUIScreen::new);
 			MenuScreens.register(MinecraftTheForgottenWorldModMenus.SLEEPING_POD_GUI.get(), SleepingPodGUIScreen::new);
+			MenuScreens.register(MinecraftTheForgottenWorldModMenus.NUKE_LAUNCH_PAD_GUI.get(), NukeLaunchPadGUIScreen::new);
 		});
 	}
 }

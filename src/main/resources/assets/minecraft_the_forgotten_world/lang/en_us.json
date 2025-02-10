@@ -1,7 +1,10 @@
 {
   "gui.minecraft_the_forgotten_world.sleeping_pod_gui.SleepingPodRadioactiveProtection": "Radioactive Protection",
   "item.minecraft_the_forgotten_world.hazmat_suit_armor_chestplate": "Hazmat Suit Chestplate",
+  "gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.NukeLaunchPadInputZ": "Z Coordinate",
+  "gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.NukeLaunchPadInputY": "Y Coordinate",
   "death.attack.radioactive_water_damage.player": "%1$s died whilst trying to escape %2$s",
+  "gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.NukeLaunchPadInputX": "X Coordinate",
   "item.minecraft_the_forgotten_world.technoblade.desc": "\"Mega Walls\" by Technoblade",
   "block.minecraft_the_forgotten_world.time_machine": "Time Machine",
   "item.minecraft.lingering_potion.effect.radioactive_potion": "Lingering Potion of Radioactive Potion",
@@ -27,6 +30,7 @@
   "item.minecraft_the_forgotten_world.hazmat_suit_armor_boots": "Hazmat Suit Boots",
   "advancements.touch_grass.title": "Touch Grass",
   "block.minecraft_the_forgotten_world.british_ac_74_bomb": "British AC-74 Bomb",
+  "gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.label_nuke": "Nuke",
   "block.minecraft_the_forgotten_world.usa_flag": "US Flag",
   "gui.minecraft_the_forgotten_world.time_machine_gui.button_self_destruct": "Self Destruct",
   "biome.minecraft_the_forgotten_world.radioactive_oak_biome": "Radioactive Oak Biome",
@@ -44,7 +48,7 @@
   "item.minecraft_the_forgotten_world.bucket_of_radioactive_mass": "Bucket Of Radioactive Mass",
   "item.minecraft.potion.effect.radioactive_potion": "Potion of Radioactive Potion",
   "item.minecraft_the_forgotten_world.policeguard_spawn_egg": "Police Guard Spawn Egg",
-  "item.minecraft_the_forgotten_world.the_forgotten_world": "Teleportation Stick",
   "death.attack.radioactive_water_damage.item": "%1$s was killed by %2$s using %3$s",
-  "block.minecraft_the_forgotten_world.sleeping_pod": "Sleeping Pod"
+  "block.minecraft_the_forgotten_world.sleeping_pod": "Sleeping Pod",
+  "gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.button_launch": "Launch"
 }

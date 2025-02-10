@@ -41,17 +41,9 @@
       "registry_name": "the_forgotten_world",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/minecrafttheforgottenworld/item/TheForgottenWorldItem.java",
-          "src/main/resources/assets/minecraft_the_forgotten_world/models/block/the_forgotten_world_portal_ew.json",
-          "src/main/resources/assets/minecraft_the_forgotten_world/blockstates/the_forgotten_world_portal.json",
-          "src/main/resources/assets/minecraft_the_forgotten_world/models/block/the_forgotten_world_portal_ns.json",
-          "src/main/java/net/mcreator/minecrafttheforgottenworld/block/TheForgottenWorldPortalBlock.java",
-          "src/main/resources/assets/minecraft_the_forgotten_world/models/item/the_forgotten_world.json",
-          "src/main/java/net/mcreator/minecrafttheforgottenworld/world/teleporter/TheForgottenWorldPortalShape.java",
-          "src/main/java/net/mcreator/minecrafttheforgottenworld/world/teleporter/TheForgottenWorldTeleporter.java",
           "src/main/resources/data/minecraft_the_forgotten_world/dimension_type/the_forgotten_world.json",
-          "src/main/java/net/mcreator/minecrafttheforgottenworld/world/dimension/TheForgottenWorldDimension.java",
-          "src/main/resources/data/minecraft_the_forgotten_world/dimension/the_forgotten_world.json"
+          "src/main/resources/data/minecraft_the_forgotten_world/dimension/the_forgotten_world.json",
+          "src/main/java/net/mcreator/minecrafttheforgottenworld/world/dimension/TheForgottenWorldDimension.java"
         ]
       }
     },
@@ -679,7 +671,8 @@
           "src/main/resources/assets/minecraft_the_forgotten_world/models/item/hazmat_suit_armor_chestplate.json",
           "src/main/resources/assets/minecraft_the_forgotten_world/models/item/hazmat_suit_armor_helmet.json"
         ]
-      }
+      },
+      "path": "~/HazmatSuit"
     },
     {
       "name": "IsWearingHazmatSuitProcedure",
@@ -790,7 +783,8 @@
         "files": [
           "src/main/resources/data/minecraft_the_forgotten_world/recipes/rubber_recipe.json"
         ]
-      }
+      },
+      "path": "~/HazmatSuit"
     },
     {
       "name": "HazmatSuitRecipe",
@@ -802,7 +796,8 @@
         "files": [
           "src/main/resources/data/minecraft_the_forgotten_world/recipes/hazmat_suit_recipe.json"
         ]
-      }
+      },
+      "path": "~/HazmatSuit"
     },
     {
       "name": "HazmatSuitBootsRecipe",
@@ -814,7 +809,8 @@
         "files": [
           "src/main/resources/data/minecraft_the_forgotten_world/recipes/hazmat_suit_boots_recipe.json"
         ]
-      }
+      },
+      "path": "~/HazmatSuit"
     },
     {
       "name": "HazmatSuitLeggingsRecipe",
@@ -826,7 +822,8 @@
         "files": [
           "src/main/resources/data/minecraft_the_forgotten_world/recipes/hazmat_suit_leggings_recipe.json"
         ]
-      }
+      },
+      "path": "~/HazmatSuit"
     },
     {
       "name": "HazmatSuitHelmetRecipe",
@@ -838,7 +835,8 @@
         "files": [
           "src/main/resources/data/minecraft_the_forgotten_world/recipes/hazmat_suit_helmet_recipe.json"
         ]
-      }
+      },
+      "path": "~/HazmatSuit"
     },
     {
       "name": "SleepingPod",
@@ -912,6 +910,94 @@
         ]
       },
       "path": "~/SleepingPod"
+    },
+    {
+      "name": "NukeLaunchPadGUI",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nuke_launch_pad_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minecrafttheforgottenworld/world/inventory/NukeLaunchPadGUIMenu.java",
+          "src/main/java/net/mcreator/minecrafttheforgottenworld/client/gui/NukeLaunchPadGUIScreen.java"
+        ]
+      },
+      "path": "~/NukeLaunchPad"
+    },
+    {
+      "name": "NukeLaunchPadGUILaunchClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nuke_launch_pad_gui_launch_clicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minecrafttheforgottenworld/procedures/NukeLaunchPadGUILaunchClickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/NukeLaunchPad"
+    },
+    {
+      "name": "OpenLaunchPadGUI",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_launch_pad_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minecrafttheforgottenworld/procedures/OpenLaunchPadGUIProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/NukeLaunchPad"
+    },
+    {
+      "name": "Guiopener",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "guiopener",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minecrafttheforgottenworld/command/GuiopenerCommand.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -981,7 +1067,10 @@
     "en_us": {
       "gui.minecraft_the_forgotten_world.sleeping_pod_gui.SleepingPodRadioactiveProtection": "Radioactive Protection",
       "item.minecraft_the_forgotten_world.hazmat_suit_armor_chestplate": "Hazmat Suit Chestplate",
+      "gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.NukeLaunchPadInputZ": "Z Coordinate",
+      "gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.NukeLaunchPadInputY": "Y Coordinate",
       "death.attack.radioactive_water_damage.player": "%1$s died whilst trying to escape %2$s",
+      "gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.NukeLaunchPadInputX": "X Coordinate",
       "item.minecraft_the_forgotten_world.technoblade.desc": "\"Mega Walls\" by Technoblade",
       "block.minecraft_the_forgotten_world.time_machine": "Time Machine",
       "item.minecraft.lingering_potion.effect.radioactive_potion": "Lingering Potion of Radioactive Potion",
@@ -1007,6 +1096,7 @@
       "item.minecraft_the_forgotten_world.hazmat_suit_armor_boots": "Hazmat Suit Boots",
       "advancements.touch_grass.title": "Touch Grass",
       "block.minecraft_the_forgotten_world.british_ac_74_bomb": "British AC-74 Bomb",
+      "gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.label_nuke": "Nuke",
       "block.minecraft_the_forgotten_world.usa_flag": "US Flag",
       "gui.minecraft_the_forgotten_world.time_machine_gui.button_self_destruct": "Self Destruct",
       "biome.minecraft_the_forgotten_world.radioactive_oak_biome": "Radioactive Oak Biome",
@@ -1024,14 +1114,17 @@
       "item.minecraft_the_forgotten_world.bucket_of_radioactive_mass": "Bucket Of Radioactive Mass",
       "item.minecraft.potion.effect.radioactive_potion": "Potion of Radioactive Potion",
       "item.minecraft_the_forgotten_world.policeguard_spawn_egg": "Police Guard Spawn Egg",
-      "item.minecraft_the_forgotten_world.the_forgotten_world": "Teleportation Stick",
       "death.attack.radioactive_water_damage.item": "%1$s was killed by %2$s using %3$s",
-      "block.minecraft_the_forgotten_world.sleeping_pod": "Sleeping Pod"
+      "block.minecraft_the_forgotten_world.sleeping_pod": "Sleeping Pod",
+      "gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.button_launch": "Launch"
     },
     "es_ar": {
       "gui.minecraft_the_forgotten_world.sleeping_pod_gui.SleepingPodRadioactiveProtection": "Radioactive Protection",
       "item.minecraft_the_forgotten_world.hazmat_suit_armor_chestplate": "Peto de traje de materiales peligrosos",
+      "gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.NukeLaunchPadInputZ": "Z Coordinate",
+      "gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.NukeLaunchPadInputY": "Y Coordinate",
       "death.attack.radioactive_water_damage.player": "%1$s murió mientras intentaba escapar de %2$s",
+      "gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.NukeLaunchPadInputX": "X Coordinate",
       "item.minecraft_the_forgotten_world.technoblade.desc": "\"Mega Walls\" de Technoblade",
       "block.minecraft_the_forgotten_world.time_machine": "maquina del tiempo",
       "item.minecraft.lingering_potion.effect.radioactive_potion": "Poción persistente de poción radiactiva",
@@ -1057,6 +1150,7 @@
       "item.minecraft_the_forgotten_world.hazmat_suit_armor_boots": "Botas de traje de materiales peligrosos",
       "advancements.touch_grass.title": "Tocar la hierba",
       "block.minecraft_the_forgotten_world.british_ac_74_bomb": "Bomba británica AC-74",
+      "gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.label_nuke": "Nuke",
       "block.minecraft_the_forgotten_world.usa_flag": "Bandera de Estados Unidos",
       "gui.minecraft_the_forgotten_world.time_machine_gui.button_self_destruct": "Autodestrucción",
       "biome.minecraft_the_forgotten_world.radioactive_oak_biome": "Bioma de roble radiactivo",
@@ -1074,9 +1168,9 @@
       "item.minecraft_the_forgotten_world.bucket_of_radioactive_mass": "Cubo de masa radiactiva",
       "item.minecraft.potion.effect.radioactive_potion": "Poción de poción radiactiva",
       "item.minecraft_the_forgotten_world.policeguard_spawn_egg": "Huevo de generación de guardia policial",
-      "item.minecraft_the_forgotten_world.the_forgotten_world": "Palo de teletransportación",
       "death.attack.radioactive_water_damage.item": "%1$s fue asesinado por %2$s usando %3$s",
-      "block.minecraft_the_forgotten_world.sleeping_pod": "Sleeping Pod"
+      "block.minecraft_the_forgotten_world.sleeping_pod": "Sleeping Pod",
+      "gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.button_launch": "Launch"
     }
   },
   "foldersRoot": {
@@ -1088,6 +1182,14 @@
       },
       {
         "name": "SleepingPod",
+        "children": []
+      },
+      {
+        "name": "HazmatSuit",
+        "children": []
+      },
+      {
+        "name": "NukeLaunchPad",
         "children": []
       }
     ]

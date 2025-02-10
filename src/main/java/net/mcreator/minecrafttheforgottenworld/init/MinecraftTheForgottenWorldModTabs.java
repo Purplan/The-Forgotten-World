@@ -62,10 +62,6 @@ public class MinecraftTheForgottenWorldModTabs {
 			tabData.accept(MinecraftTheForgottenWorldModItems.RUBBER_NUGGET_ITEM.get());
 			tabData.accept(MinecraftTheForgottenWorldModItems.RUBBER_ITEM.get());
 
-		} else if (tabData.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
-
-			tabData.accept(MinecraftTheForgottenWorldModItems.THE_FORGOTTEN_WORLD.get());
-
 		} else if (tabData.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
 
 			tabData.accept(MinecraftTheForgottenWorldModBlocks.URANIUM.get().asItem());
