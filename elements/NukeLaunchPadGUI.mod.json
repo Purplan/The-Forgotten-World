@@ -82,6 +82,9 @@
           "name": "button_launch",
           "text": "Launch",
           "isUndecorated": false,
+          "onClick": {
+            "name": "NukeLaunchPadGUILaunchClicked"
+          },
           "width": 56,
           "height": 20,
           "x": 247,

@@ -411,7 +411,8 @@
           "src/main/resources/data/minecraft_the_forgotten_world/loot_tables/blocks/uranium.json",
           "src/main/resources/assets/minecraft_the_forgotten_world/models/block/uranium.json"
         ]
-      }
+      },
+      "path": "~/Uranium"
     },
     {
       "name": "UraniumIngot",
@@ -424,7 +425,8 @@
           "src/main/resources/assets/minecraft_the_forgotten_world/models/item/uranium_ingot.json",
           "src/main/java/net/mcreator/minecrafttheforgottenworld/item/UraniumIngotItem.java"
         ]
-      }
+      },
+      "path": "~/Uranium"
     },
     {
       "name": "BritishAC74Bomb",
@@ -920,6 +922,7 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/minecrafttheforgottenworld/world/inventory/NukeLaunchPadGUIMenu.java",
+          "src/main/java/net/mcreator/minecrafttheforgottenworld/network/NukeLaunchPadGUIButtonMessage.java",
           "src/main/java/net/mcreator/minecrafttheforgottenworld/client/gui/NukeLaunchPadGUIScreen.java"
         ]
       },
@@ -998,6 +1001,37 @@
           "src/main/java/net/mcreator/minecrafttheforgottenworld/command/GuiopenerCommand.java"
         ]
       }
+    },
+    {
+      "name": "UraniumNearDamage",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "uranium_near_damage",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minecrafttheforgottenworld/procedures/UraniumNearDamageProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Uranium"
     }
   ],
   "variable_elements": [
@@ -1072,9 +1106,9 @@
       "death.attack.radioactive_water_damage.player": "%1$s died whilst trying to escape %2$s",
       "gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.NukeLaunchPadInputX": "X Coordinate",
       "item.minecraft_the_forgotten_world.technoblade.desc": "\"Mega Walls\" by Technoblade",
-      "block.minecraft_the_forgotten_world.time_machine": "Time Machine",
-      "item.minecraft.lingering_potion.effect.radioactive_potion": "Lingering Potion of Radioactive Potion",
       "block.minecraft_the_forgotten_world.uranium": "Uranium Ore",
+      "item.minecraft.lingering_potion.effect.radioactive_potion": "Lingering Potion of Radioactive Potion",
+      "block.minecraft_the_forgotten_world.time_machine": "Time Machine",
       "item.minecraft.tipped_arrow.effect.radioactive_potion": "Arrow of Radioactive Potion",
       "item.minecraft_the_forgotten_world.hazmat_suit_armor_leggings": "Hazmat Suit Leggings",
       "block.minecraft_the_forgotten_world.uk_flag": "UK Flag",
@@ -1126,9 +1160,9 @@
       "death.attack.radioactive_water_damage.player": "%1$s murió mientras intentaba escapar de %2$s",
       "gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.NukeLaunchPadInputX": "X Coordinate",
       "item.minecraft_the_forgotten_world.technoblade.desc": "\"Mega Walls\" de Technoblade",
-      "block.minecraft_the_forgotten_world.time_machine": "maquina del tiempo",
-      "item.minecraft.lingering_potion.effect.radioactive_potion": "Poción persistente de poción radiactiva",
       "block.minecraft_the_forgotten_world.uranium": "Mineral de uranio",
+      "item.minecraft.lingering_potion.effect.radioactive_potion": "Poción persistente de poción radiactiva",
+      "block.minecraft_the_forgotten_world.time_machine": "maquina del tiempo",
       "item.minecraft.tipped_arrow.effect.radioactive_potion": "Flecha de poción radiactiva",
       "item.minecraft_the_forgotten_world.hazmat_suit_armor_leggings": "Traje de materiales peligrosos Leggings",
       "block.minecraft_the_forgotten_world.uk_flag": "Bandera del Reino Unido",
@@ -1190,6 +1224,10 @@
       },
       {
         "name": "NukeLaunchPad",
+        "children": []
+      },
+      {
+        "name": "Uranium",
         "children": []
       }
     ]

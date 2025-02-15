@@ -12,6 +12,8 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.minecrafttheforgottenworld.world.inventory.NukeLaunchPadGUIMenu;
+import net.mcreator.minecrafttheforgottenworld.network.NukeLaunchPadGUIButtonMessage;
+import net.mcreator.minecrafttheforgottenworld.MinecraftTheForgottenWorldMod;
 
 import java.util.HashMap;
 
@@ -171,6 +173,10 @@ public class NukeLaunchPadGUIScreen extends AbstractContainerScreen<NukeLaunchPa
 		guistate.put("text:NukeLaunchPadInputZ", NukeLaunchPadInputZ);
 		this.addWidget(this.NukeLaunchPadInputZ);
 		button_launch = Button.builder(Component.translatable("gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.button_launch"), e -> {
+			if (true) {
+				MinecraftTheForgottenWorldMod.PACKET_HANDLER.sendToServer(new NukeLaunchPadGUIButtonMessage(0, x, y, z));
+				NukeLaunchPadGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
+			}
 		}).bounds(this.leftPos + 131, this.topPos + 51, 56, 20).build();
 		guistate.put("button:button_launch", button_launch);
 		this.addRenderableWidget(button_launch);
