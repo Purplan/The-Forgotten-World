@@ -33,7 +33,20 @@
         "subtract": false
       }
     ],
-    "customProperties": [],
+    "customProperties": [
+      {
+        "name": "CUSTOM:self_destruct_activated",
+        "type": "logic",
+        "value": false
+      },
+      {
+        "min": 0,
+        "max": 500,
+        "name": "CUSTOM:ticks_until_self_destruct",
+        "type": "integer",
+        "value": 400
+      }
+    ],
     "name": "Time Machine",
     "specialInformation": {
       "fixedValue": []
@@ -102,7 +115,7 @@
       "value": ""
     },
     "luminance": 0,
-    "unbreakable": true,
+    "unbreakable": false,
     "vanillaToolTier": "NONE",
     "isBonemealable": false,
     "hasInventory": true,

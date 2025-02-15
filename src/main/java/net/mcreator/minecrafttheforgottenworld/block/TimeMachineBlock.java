@@ -8,6 +8,9 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -16,6 +19,7 @@ import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
@@ -37,8 +41,12 @@ import net.mcreator.minecrafttheforgottenworld.block.entity.TimeMachineBlockEnti
 import io.netty.buffer.Unpooled;
 
 public class TimeMachineBlock extends Block implements EntityBlock {
+	public static final BooleanProperty SELF_DESTRUCT_ACTIVATED = BooleanProperty.create("self_destruct_activated");
+	public static final IntegerProperty TICKS_UNTIL_SELF_DESTRUCT = IntegerProperty.create("ticks_until_self_destruct", 0, 500);
+
 	public TimeMachineBlock() {
-		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.GRAVEL).strength(-1, 3600000).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.GRAVEL).strength(1f, 2f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
+		this.registerDefaultState(this.stateDefinition.any().setValue(SELF_DESTRUCT_ACTIVATED, false).setValue(TICKS_UNTIL_SELF_DESTRUCT, 400));
 	}
 
 	@Override
@@ -57,6 +65,17 @@ public class TimeMachineBlock extends Block implements EntityBlock {
 	}
 
 	@Override
+	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+		super.createBlockStateDefinition(builder);
+		builder.add(SELF_DESTRUCT_ACTIVATED, TICKS_UNTIL_SELF_DESTRUCT);
+	}
+
+	@Override
+	public BlockState getStateForPlacement(BlockPlaceContext context) {
+		return super.getStateForPlacement(context).setValue(SELF_DESTRUCT_ACTIVATED, false).setValue(TICKS_UNTIL_SELF_DESTRUCT, 400);
+	}
+
+	@Override
 	public void onPlace(BlockState blockstate, Level world, BlockPos pos, BlockState oldState, boolean moving) {
 		super.onPlace(blockstate, world, pos, oldState, moving);
 		world.scheduleTick(pos, this, 100);
@@ -68,7 +87,7 @@ public class TimeMachineBlock extends Block implements EntityBlock {
 		int x = pos.getX();
 		int y = pos.getY();
 		int z = pos.getZ();
-		TimeMachineOnTickUpdateProcedure.execute(world, x, y, z);
+		TimeMachineOnTickUpdateProcedure.execute(world, x, y, z, blockstate);
 		world.scheduleTick(pos, this, 100);
 	}
 
