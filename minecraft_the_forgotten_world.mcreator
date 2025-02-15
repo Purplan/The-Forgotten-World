@@ -794,6 +794,237 @@
       }
     },
     {
+      "name": "Guiopener",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "guiopener",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minecrafttheforgottenworld/command/GuiopenerCommand.java"
+        ]
+      }
+    },
+    {
+      "name": "SleepingPodGUI",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sleeping_pod_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minecrafttheforgottenworld/client/gui/SleepingPodGUIScreen.java",
+          "src/main/java/net/mcreator/minecrafttheforgottenworld/world/inventory/SleepingPodGUIMenu.java"
+        ]
+      },
+      "path": "~/SleepingPod"
+    },
+    {
+      "name": "SleepingPod",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sleeping_pod",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/minecraft_the_forgotten_world/loot_tables/blocks/sleeping_pod.json",
+          "src/main/resources/assets/minecraft_the_forgotten_world/models/block/sleeping_pod.json",
+          "src/main/resources/assets/minecraft_the_forgotten_world/blockstates/sleeping_pod.json",
+          "src/main/resources/assets/minecraft_the_forgotten_world/models/item/sleeping_pod.json",
+          "src/main/java/net/mcreator/minecrafttheforgottenworld/block/SleepingPodBlock.java"
+        ]
+      },
+      "path": "~/SleepingPod"
+    },
+    {
+      "name": "SleepingPodGUIWhileThisGUIIsOpenTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sleeping_pod_gui_while_this_gui_is_open_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minecrafttheforgottenworld/procedures/SleepingPodGUIWhileThisGUIIsOpenTickProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/SleepingPod"
+    },
+    {
+      "name": "HazmatSuitHelmetRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hazmat_suit_helmet_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/minecraft_the_forgotten_world/recipes/hazmat_suit_helmet_recipe.json"
+        ]
+      },
+      "path": "~/HazmatSuit"
+    },
+    {
+      "name": "HazmatSuitLeggingsRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hazmat_suit_leggings_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/minecraft_the_forgotten_world/recipes/hazmat_suit_leggings_recipe.json"
+        ]
+      },
+      "path": "~/HazmatSuit"
+    },
+    {
+      "name": "SleepingPodGUIThisGUIIsClosed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sleeping_pod_gui_this_gui_is_closed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minecrafttheforgottenworld/procedures/SleepingPodGUIThisGUIIsClosedProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/SleepingPod"
+    },
+    {
+      "name": "UraniumOnTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "uranium_on_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minecrafttheforgottenworld/procedures/UraniumOnTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Uranium"
+    },
+    {
+      "name": "HazmatSuitBootsRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hazmat_suit_boots_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/minecraft_the_forgotten_world/recipes/hazmat_suit_boots_recipe.json"
+        ]
+      },
+      "path": "~/HazmatSuit"
+    },
+    {
+      "name": "OpenLaunchPadGUI",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_launch_pad_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minecrafttheforgottenworld/procedures/OpenLaunchPadGUIProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/NukeLaunchPad"
+    },
+    {
+      "name": "NukeLaunchPadGUILaunchClicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nuke_launch_pad_gui_launch_clicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minecrafttheforgottenworld/procedures/NukeLaunchPadGUILaunchClickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/NukeLaunchPad"
+    },
+    {
+      "name": "HazmatSuitRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hazmat_suit_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/minecraft_the_forgotten_world/recipes/hazmat_suit_recipe.json"
+        ]
+      },
+      "path": "~/HazmatSuit"
+    },
+    {
+      "name": "NukeLaunchPadGUI",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nuke_launch_pad_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minecrafttheforgottenworld/world/inventory/NukeLaunchPadGUIMenu.java",
+          "src/main/java/net/mcreator/minecrafttheforgottenworld/network/NukeLaunchPadGUIButtonMessage.java",
+          "src/main/java/net/mcreator/minecrafttheforgottenworld/client/gui/NukeLaunchPadGUIScreen.java"
+        ]
+      },
+      "path": "~/NukeLaunchPad"
+    },
+    {
       "name": "TimeMachineOnTickUpdate",
       "type": "procedure",
       "compiles": true,
@@ -831,6 +1062,12 @@
   "variable_elements": [
     {
       "name": "is_wearing_hazmat_suit",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "has_radioactivity_protection",
       "type": "logic",
       "scope": "player_lifetime",
       "value": "false"
@@ -890,97 +1127,103 @@
       "item.minecraft_the_forgotten_world.hazmat_suit_armor_chestplate": "Hazmat Suit Chestplate",
       "death.attack.radioactive_water_damage.player": "%1$s died whilst trying to escape %2$s",
       "item.minecraft_the_forgotten_world.technoblade.desc": "\"Mega Walls\" by Technoblade",
-      "advancements.touch_grass.descr": "Get 5 or more netherite blocks",
-      "block.minecraft_the_forgotten_world.uranium": "Uranium Ore",
-      "item.minecraft.lingering_potion.effect.radioactive_potion": "Lingering Potion of Radioactive Potion",
       "block.minecraft_the_forgotten_world.time_machine": "Time Machine",
-      "item.minecraft_the_forgotten_world.hazmat_suit_armor_boots": "Hazmat Suit Boots",
-      "advancements.touch_grass.title": "Touch Grass",
+      "item.minecraft.lingering_potion.effect.radioactive_potion": "Lingering Potion of Radioactive Potion",
+      "block.minecraft_the_forgotten_world.uranium": "Uranium Ore",
       "item.minecraft.tipped_arrow.effect.radioactive_potion": "Arrow of Radioactive Potion",
       "item.minecraft_the_forgotten_world.hazmat_suit_armor_leggings": "Hazmat Suit Leggings",
+      "block.minecraft_the_forgotten_world.uk_flag": "UK Flag",
+      "subtitles.technoblade": "",
+      "advancements.a_sus_time.title": "A Sus Time",
+      "item.minecraft_the_forgotten_world.radioactive_water_bucket": "Radioactive Water Bucket",
+      "item.minecraft_the_forgotten_world.hazmat_suit_armor_helmet": "Hazmat Suit Helmet",
+      "gui.minecraft_the_forgotten_world.time_machine_gui.button_source_time": "Source Time",
+      "advancements.a_sus_time.descr": "Enter the dimension \"The Forgotten World\"",
+      "effect.minecraft_the_forgotten_world.radioactive_effect": "Radioactive Effect",
+      "item.minecraft_the_forgotten_world.uranium_ingot": "Uranium Ingot",
+      "subtitles.log1": "",
+      "gui.minecraft_the_forgotten_world.time_machine_gui.button_the_american_war": "The American War",
+      "block.minecraft_the_forgotten_world.british_ac_79_land_mine": "British AC-79 Land Mine",
+      "item.minecraft_the_forgotten_world.radioactive_sword": "Radioactive Sword",
+      "item.minecraft_the_forgotten_world.bucket_of_gunpowder": "Bucket Of Gunpowder",
+      "item_group.minecraft_the_forgotten_world.uk": "UK",
+      "advancements.touch_grass.descr": "Get 5 or more netherite blocks",
+      "item.minecraft_the_forgotten_world.hazmat_suit_armor_boots": "Hazmat Suit Boots",
+      "advancements.touch_grass.title": "Touch Grass",
       "block.minecraft_the_forgotten_world.british_ac_74_bomb": "British AC-74 Bomb",
       "block.minecraft_the_forgotten_world.usa_flag": "US Flag",
-      "block.minecraft_the_forgotten_world.uk_flag": "UK Flag",
       "gui.minecraft_the_forgotten_world.time_machine_gui.button_self_destruct": "Self Destruct",
       "biome.minecraft_the_forgotten_world.radioactive_oak_biome": "Radioactive Oak Biome",
-      "subtitles.technoblade": "",
       "item.minecraft_the_forgotten_world.technoblade": "\"Mega Walls\" by Technoblade",
-      "advancements.a_sus_time.title": "A Sus Time",
       "item.minecraft_the_forgotten_world.rubber_nugget_item": "Rubber Nugget",
       "block.minecraft_the_forgotten_world.radioactive_water": "Radioactive Water",
       "death.attack.radioactive_water_damage": "%1$s died of radioactive inhaling",
-      "item.minecraft_the_forgotten_world.radioactive_water_bucket": "Radioactive Water Bucket",
-      "item.minecraft_the_forgotten_world.hazmat_suit_armor_helmet": "Hazmat Suit Helmet",
       "item.minecraft_the_forgotten_world.rubber_item": "Rubber",
       "entity.minecraft_the_forgotten_world.policeguard": "Police Guard",
-      "gui.minecraft_the_forgotten_world.time_machine_gui.button_source_time": "Source Time",
-      "advancements.a_sus_time.descr": "Enter the dimension \"The Forgotten World\"",
       "fluid.minecraft_the_forgotten_world.radioactive_water": "Radioactive Water",
       "gui.minecraft_the_forgotten_world.time_machine_gui.button_the_american_war_2039": "The American War - 2039",
       "block.minecraft_the_forgotten_world.rubber_fig_plant": "Rubber Fig Plant",
       "item.minecraft.splash_potion.effect.radioactive_potion": "Splash Potion of Radioactive Potion",
       "item_group.minecraft_the_forgotten_world.usa": "USA",
-      "effect.minecraft_the_forgotten_world.radioactive_effect": "Radioactive Effect",
       "item.minecraft_the_forgotten_world.bucket_of_radioactive_mass": "Bucket Of Radioactive Mass",
       "item.minecraft.potion.effect.radioactive_potion": "Potion of Radioactive Potion",
-      "item.minecraft_the_forgotten_world.uranium_ingot": "Uranium Ingot",
       "item.minecraft_the_forgotten_world.policeguard_spawn_egg": "Police Guard Spawn Egg",
-      "subtitles.log1": "",
-      "item.minecraft_the_forgotten_world.the_forgotten_world": "Teleportation Stick",
-      "gui.minecraft_the_forgotten_world.time_machine_gui.button_the_american_war": "The American War",
-      "block.minecraft_the_forgotten_world.british_ac_79_land_mine": "British AC-79 Land Mine",
-      "item.minecraft_the_forgotten_world.radioactive_sword": "Radioactive Sword",
-      "death.attack.radioactive_water_damage.item": "%1$s was killed by %2$s using %3$s",
-      "item.minecraft_the_forgotten_world.bucket_of_gunpowder": "Bucket Of Gunpowder",
-      "item_group.minecraft_the_forgotten_world.uk": "UK"
+      "death.attack.radioactive_water_damage.item": "%1$s was killed by %2$s using %3$s"
     },
     "es_ar": {
+      "gui.minecraft_the_forgotten_world.sleeping_pod_gui.SleepingPodRadioactiveProtection": "Radioactive Protection",
       "item.minecraft_the_forgotten_world.hazmat_suit_armor_chestplate": "Hazmat Suit Chestplate",
+      "gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.NukeLaunchPadInputZ": "Z Coordinate",
+      "gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.NukeLaunchPadInputY": "Y Coordinate",
       "death.attack.radioactive_water_damage.player": "%1$s died whilst trying to escape %2$s",
+      "gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.NukeLaunchPadInputX": "X Coordinate",
       "item.minecraft_the_forgotten_world.technoblade.desc": "\"Mega Walls\" by Technoblade",
-      "advancements.touch_grass.descr": "Get 5 or more netherite blocks",
-      "block.minecraft_the_forgotten_world.uranium": "Uranium Ore",
-      "item.minecraft.lingering_potion.effect.radioactive_potion": "Lingering Potion of Radioactive Potion",
       "block.minecraft_the_forgotten_world.time_machine": "Time Machine",
-      "item.minecraft_the_forgotten_world.hazmat_suit_armor_boots": "Hazmat Suit Boots",
-      "advancements.touch_grass.title": "Touch Grass",
+      "item.minecraft.lingering_potion.effect.radioactive_potion": "Lingering Potion of Radioactive Potion",
+      "block.minecraft_the_forgotten_world.uranium": "Uranium Ore",
       "item.minecraft.tipped_arrow.effect.radioactive_potion": "Arrow of Radioactive Potion",
       "item.minecraft_the_forgotten_world.hazmat_suit_armor_leggings": "Hazmat Suit Leggings",
-      "block.minecraft_the_forgotten_world.british_ac_74_bomb": "British AC-74 Bomb",
-      "block.minecraft_the_forgotten_world.usa_flag": "US Flag",
       "block.minecraft_the_forgotten_world.uk_flag": "UK Flag",
+      "subtitles.technoblade": "",
+      "advancements.a_sus_time.title": "A Sus Time",
+      "item.minecraft_the_forgotten_world.radioactive_water_bucket": "Radioactive Water Bucket",
+      "item.minecraft_the_forgotten_world.hazmat_suit_armor_helmet": "Hazmat Suit Helmet",
+      "gui.minecraft_the_forgotten_world.time_machine_gui.button_source_time": "Source Time",
+      "advancements.a_sus_time.descr": "Enter the dimension \"The Forgotten World\"",
+      "effect.minecraft_the_forgotten_world.radioactive_effect": "Radioactive Effect",
+      "item.minecraft_the_forgotten_world.uranium_ingot": "Uranium Ingot",
+      "subtitles.log1": "",
+      "gui.minecraft_the_forgotten_world.time_machine_gui.button_the_american_war": "The American War",
+      "block.minecraft_the_forgotten_world.british_ac_79_land_mine": "British AC-79 Land Mine",
+      "item.minecraft_the_forgotten_world.radioactive_sword": "Radioactive Sword",
+      "item.minecraft_the_forgotten_world.bucket_of_gunpowder": "Bucket Of Gunpowder",
+      "item_group.minecraft_the_forgotten_world.uk": "UK",
+      "advancements.touch_grass.descr": "Get 5 or more netherite blocks",
+      "item.minecraft_the_forgotten_world.hazmat_suit_armor_boots": "Hazmat Suit Boots",
+      "advancements.touch_grass.title": "Touch Grass",
+      "block.minecraft_the_forgotten_world.british_ac_74_bomb": "British AC-74 Bomb",
+      "gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.label_nuke": "Nuke",
+      "block.minecraft_the_forgotten_world.usa_flag": "US Flag",
       "gui.minecraft_the_forgotten_world.time_machine_gui.button_self_destruct": "Self Destruct",
       "biome.minecraft_the_forgotten_world.radioactive_oak_biome": "Radioactive Oak Biome",
-      "subtitles.technoblade": "",
       "item.minecraft_the_forgotten_world.technoblade": "\"Mega Walls\" by Technoblade",
-      "advancements.a_sus_time.title": "A Sus Time",
       "item.minecraft_the_forgotten_world.rubber_nugget_item": "Rubber Nugget",
       "block.minecraft_the_forgotten_world.radioactive_water": "Radioactive Water",
       "death.attack.radioactive_water_damage": "%1$s died of radioactive inhaling",
-      "item.minecraft_the_forgotten_world.radioactive_water_bucket": "Radioactive Water Bucket",
-      "item.minecraft_the_forgotten_world.hazmat_suit_armor_helmet": "Hazmat Suit Helmet",
       "item.minecraft_the_forgotten_world.rubber_item": "Rubber",
       "entity.minecraft_the_forgotten_world.policeguard": "Police Guard",
-      "gui.minecraft_the_forgotten_world.time_machine_gui.button_source_time": "Source Time",
-      "advancements.a_sus_time.descr": "Enter the dimension \"The Forgotten World\"",
       "fluid.minecraft_the_forgotten_world.radioactive_water": "Radioactive Water",
       "gui.minecraft_the_forgotten_world.time_machine_gui.button_the_american_war_2039": "The American War - 2039",
       "block.minecraft_the_forgotten_world.rubber_fig_plant": "Rubber Fig Plant",
       "item.minecraft.splash_potion.effect.radioactive_potion": "Splash Potion of Radioactive Potion",
       "item_group.minecraft_the_forgotten_world.usa": "USA",
-      "effect.minecraft_the_forgotten_world.radioactive_effect": "Radioactive Effect",
       "item.minecraft_the_forgotten_world.bucket_of_radioactive_mass": "Bucket Of Radioactive Mass",
       "item.minecraft.potion.effect.radioactive_potion": "Potion of Radioactive Potion",
-      "item.minecraft_the_forgotten_world.uranium_ingot": "Uranium Ingot",
       "item.minecraft_the_forgotten_world.policeguard_spawn_egg": "Police Guard Spawn Egg",
-      "subtitles.log1": "",
       "item.minecraft_the_forgotten_world.the_forgotten_world": "Teleportation Stick",
-      "gui.minecraft_the_forgotten_world.time_machine_gui.button_the_american_war": "The American War",
-      "block.minecraft_the_forgotten_world.british_ac_79_land_mine": "British AC-79 Land Mine",
-      "item.minecraft_the_forgotten_world.radioactive_sword": "Radioactive Sword",
       "death.attack.radioactive_water_damage.item": "%1$s was killed by %2$s using %3$s",
-      "item.minecraft_the_forgotten_world.bucket_of_gunpowder": "Bucket Of Gunpowder",
-      "item_group.minecraft_the_forgotten_world.uk": "UK"
+      "block.minecraft_the_forgotten_world.sleeping_pod": "Sleeping Pod",
+      "gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.button_launch": "Launch"
     }
   },
   "foldersRoot": {
@@ -988,6 +1231,22 @@
     "children": [
       {
         "name": "RadioActiveBiome",
+        "children": []
+      },
+      {
+        "name": "HazmatSuit",
+        "children": []
+      },
+      {
+        "name": "NukeLaunchPad",
+        "children": []
+      },
+      {
+        "name": "Uranium",
+        "children": []
+      },
+      {
+        "name": "SleepingPod",
         "children": []
       }
     ]

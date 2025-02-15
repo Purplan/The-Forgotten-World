@@ -2,14 +2,14 @@
   "_fv": 69,
   "_type": "block",
   "definition": {
-    "texture": "s189772745713394276_p3855_i147_w750",
-    "textureTop": "s189772745713394276_p3855_i147_w750",
-    "textureLeft": "s189772745713394276_p3855_i147_w750",
-    "textureFront": "s189772745713394276_p3855_i147_w750",
-    "textureRight": "s189772745713394276_p3855_i147_w750",
-    "textureBack": "s189772745713394276_p3855_i147_w750",
-    "renderType": 10,
-    "customModelName": "Normal",
+    "texture": "flag-united-states-of-america",
+    "textureTop": "",
+    "textureLeft": "",
+    "textureFront": "",
+    "textureRight": "",
+    "textureBack": "",
+    "renderType": 3,
+    "customModelName": "time_machine:default",
     "rotationMode": 0,
     "enablePitch": false,
     "emissiveRendering": false,
@@ -18,7 +18,7 @@
     "particleTexture": "",
     "tintType": "No tint",
     "isItemTinted": false,
-    "hasTransparency": false,
+    "hasTransparency": true,
     "connectedSides": false,
     "transparencyType": "SOLID",
     "disableOffset": false,
@@ -34,22 +34,22 @@
       }
     ],
     "customProperties": [],
-    "name": "Uranium Ore",
+    "name": "Sleeping Pod",
     "specialInformation": {
       "fixedValue": []
     },
-    "hardness": 15.0,
+    "hardness": 1.0,
     "resistance": 10.0,
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTabs": [
       {
-        "value": "DECORATIONS"
+        "value": "TRANSPORTATION"
       }
     ],
-    "destroyTool": "pickaxe",
+    "destroyTool": "Not specified",
     "customDrop": {
-      "value": "CUSTOM:UraniumIngot"
+      "value": ""
     },
     "dropAmount": 1,
     "useLootTableForDrops": false,
@@ -57,11 +57,11 @@
     "enchantPowerBonus": 0.0,
     "plantsGrowOn": false,
     "canRedstoneConnect": false,
-    "lightOpacity": 15,
+    "lightOpacity": 0,
     "material": {
-      "value": "ROCK"
+      "value": "NONE"
     },
-    "tickRate": 20,
+    "tickRate": 0,
     "tickRandomly": false,
     "isReplaceable": false,
     "canProvidePower": false,
@@ -84,7 +84,7 @@
     "isNotColidable": false,
     "isCustomSoundType": false,
     "soundOnStep": {
-      "value": "STONE"
+      "value": "GROUND"
     },
     "breakSound": {
       "value": ""
@@ -103,11 +103,11 @@
     },
     "luminance": 0,
     "unbreakable": false,
-    "vanillaToolTier": "DIAMOND",
+    "vanillaToolTier": "NONE",
     "isBonemealable": false,
     "hasInventory": false,
-    "guiBoundTo": "<NONE>",
-    "openGUIOnRightClick": false,
+    "guiBoundTo": "SleepingPodGUI",
+    "openGUIOnRightClick": true,
     "inventorySize": 9,
     "inventoryStackSize": 64,
     "inventoryDropWhenDestroyed": true,
@@ -122,26 +122,17 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
-    "onTickUpdate": {
-      "name": "UraniumOnTickUpdate"
-    },
-    "generateFeature": true,
+    "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [
       {
         "value": "TAG:stone_ore_replaceables"
-      },
-      {
-        "value": "Blocks.STONE#0"
-      },
-      {
-        "value": "Blocks.DEEPSLATE"
       }
     ],
     "generationShape": "UNIFORM",
     "frequencyPerChunks": 10,
-    "frequencyOnChunk": 9,
-    "minGenerateHeight": -71,
-    "maxGenerateHeight": 12
+    "frequencyOnChunk": 16,
+    "minGenerateHeight": 0,
+    "maxGenerateHeight": 64
   }
 }

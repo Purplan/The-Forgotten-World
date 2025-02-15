@@ -53,6 +53,6 @@
     ],
     "texture": "bild_2024-08-14_173043946-removebg-preview",
     "portalTexture": "radioactive_water",
-    "enablePortal": true
+    "enablePortal": false
   }
 }

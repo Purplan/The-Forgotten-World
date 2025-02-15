@@ -14,7 +14,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.BlockItem;
 
 import net.mcreator.minecrafttheforgottenworld.item.UraniumIngotItem;
-import net.mcreator.minecrafttheforgottenworld.item.TheForgottenWorldItem;
 import net.mcreator.minecrafttheforgottenworld.item.TechnobladeItem;
 import net.mcreator.minecrafttheforgottenworld.item.RubberNuggetItemItem;
 import net.mcreator.minecrafttheforgottenworld.item.RubberItemItem;
@@ -28,7 +27,6 @@ import net.mcreator.minecrafttheforgottenworld.MinecraftTheForgottenWorldMod;
 public class MinecraftTheForgottenWorldModItems {
 	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, MinecraftTheForgottenWorldMod.MODID);
 	public static final RegistryObject<Item> RADIOACTIVE_WATER_BUCKET = REGISTRY.register("radioactive_water_bucket", () -> new RadioactiveWaterItem());
-	public static final RegistryObject<Item> THE_FORGOTTEN_WORLD = REGISTRY.register("the_forgotten_world", () -> new TheForgottenWorldItem());
 	public static final RegistryObject<Item> BUCKET_OF_RADIOACTIVE_MASS = REGISTRY.register("bucket_of_radioactive_mass", () -> new BucketOfRadioactiveMassItem());
 	public static final RegistryObject<Item> RADIOACTIVE_SWORD = REGISTRY.register("radioactive_sword", () -> new RadioactiveSwordItem());
 	public static final RegistryObject<Item> TECHNOBLADE = REGISTRY.register("technoblade", () -> new TechnobladeItem());
@@ -48,6 +46,7 @@ public class MinecraftTheForgottenWorldModItems {
 	public static final RegistryObject<Item> RUBBER_FIG_PLANT = block(MinecraftTheForgottenWorldModBlocks.RUBBER_FIG_PLANT);
 	public static final RegistryObject<Item> RUBBER_NUGGET_ITEM = REGISTRY.register("rubber_nugget_item", () -> new RubberNuggetItemItem());
 	public static final RegistryObject<Item> RUBBER_ITEM = REGISTRY.register("rubber_item", () -> new RubberItemItem());
+	public static final RegistryObject<Item> SLEEPING_POD = block(MinecraftTheForgottenWorldModBlocks.SLEEPING_POD);
 
 	// Start of user code block custom items
 	// End of user code block custom items
