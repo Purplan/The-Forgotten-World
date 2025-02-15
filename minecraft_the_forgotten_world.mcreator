@@ -265,6 +265,7 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/minecraft_the_forgotten_world/models/item/time_machine.json",
+          "src/main/java/net/mcreator/minecrafttheforgottenworld/block/entity/TimeMachineBlockEntity.java",
           "src/main/resources/assets/minecraft_the_forgotten_world/blockstates/time_machine.json",
           "src/main/java/net/mcreator/minecrafttheforgottenworld/block/TimeMachineBlock.java",
           "src/main/resources/assets/minecraft_the_forgotten_world/models/block/time_machine.json",
@@ -743,14 +744,14 @@
       "registry_name": "rubber_fig_plant",
       "metadata": {
         "files": [
-          "src/main/resources/data/minecraft_the_forgotten_world/worldgen/configured_feature/rubber_fig_plant.json",
-          "src/main/resources/data/minecraft_the_forgotten_world/forge/biome_modifier/rubber_fig_plant_biome_modifier.json",
-          "src/main/resources/data/minecraft_the_forgotten_world/worldgen/placed_feature/rubber_fig_plant.json",
-          "src/main/resources/data/minecraft_the_forgotten_world/loot_tables/blocks/rubber_fig_plant.json",
           "src/main/resources/assets/minecraft_the_forgotten_world/models/item/rubber_fig_plant.json",
-          "src/main/resources/assets/minecraft_the_forgotten_world/blockstates/rubber_fig_plant.json",
+          "src/main/resources/data/minecraft_the_forgotten_world/worldgen/configured_feature/rubber_fig_plant.json",
           "src/main/resources/assets/minecraft_the_forgotten_world/models/block/rubber_fig_plant.json",
-          "src/main/java/net/mcreator/minecrafttheforgottenworld/block/RubberFigPlantBlock.java"
+          "src/main/resources/data/minecraft_the_forgotten_world/loot_tables/blocks/rubber_fig_plant.json",
+          "src/main/resources/assets/minecraft_the_forgotten_world/blockstates/rubber_fig_plant.json",
+          "src/main/resources/data/minecraft_the_forgotten_world/worldgen/placed_feature/rubber_fig_plant.json",
+          "src/main/java/net/mcreator/minecrafttheforgottenworld/block/RubberFigPlantBlock.java",
+          "src/main/resources/data/minecraft_the_forgotten_world/forge/biome_modifier/rubber_fig_plant_biome_modifier.json"
         ]
       }
     },
