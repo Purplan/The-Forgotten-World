@@ -77,7 +77,7 @@ public class SleepingPodGUIMenu extends AbstractContainerMenu implements Supplie
 	@Override
 	public void removed(Player playerIn) {
 		super.removed(playerIn);
-		SleepingPodGUIThisGUIIsClosedProcedure.execute(entity);
+		SleepingPodGUIThisGUIIsClosedProcedure.execute();
 	}
 
 	public Map<Integer, Slot> get() {
@@ -92,7 +92,7 @@ public class SleepingPodGUIMenu extends AbstractContainerMenu implements Supplie
 			double x = entity.getX();
 			double y = entity.getY();
 			double z = entity.getZ();
-			SleepingPodGUIWhileThisGUIIsOpenTickProcedure.execute(entity, guistate);
+			SleepingPodGUIWhileThisGUIIsOpenTickProcedure.execute();
 		}
 	}
 }
