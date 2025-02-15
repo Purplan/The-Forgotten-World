@@ -411,7 +411,8 @@
           "src/main/java/net/mcreator/minecrafttheforgottenworld/block/UraniumBlock.java",
           "src/main/resources/data/minecraft_the_forgotten_world/worldgen/placed_feature/uranium.json"
         ]
-      }
+      },
+      "path": "~/Uranium"
     },
     {
       "name": "UraniumIngot",
@@ -424,7 +425,8 @@
           "src/main/java/net/mcreator/minecrafttheforgottenworld/item/UraniumIngotItem.java",
           "src/main/resources/assets/minecraft_the_forgotten_world/models/item/uranium_ingot.json"
         ]
-      }
+      },
+      "path": "~/Uranium"
     },
     {
       "name": "BritishAC74Bomb",
@@ -828,37 +830,6 @@
       "path": "~/SleepingPod"
     },
     {
-      "name": "UraniumNearDamage",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "uranium_near_damage",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/minecrafttheforgottenworld/procedures/UraniumNearDamageProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Uranium"
-    },
-    {
       "name": "SleepingPodGUIWhileThisGUIIsOpenTick",
       "type": "procedure",
       "compiles": true,
@@ -1030,20 +1001,16 @@
       "path": "~/NukeLaunchPad"
     },
     {
-      "name": "TimeMachineOnTickUpdate",
+      "name": "UraniumOnTickUpdate",
       "type": "procedure",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "time_machine_on_tick_update",
+      "registry_name": "uranium_on_tick_update",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/minecrafttheforgottenworld/procedures/TimeMachineOnTickUpdateProcedure.java"
+          "src/main/java/net/mcreator/minecrafttheforgottenworld/procedures/UraniumOnTickUpdateProcedure.java"
         ],
         "dependencies": [
-          {
-            "name": "blockstate",
-            "type": "blockstate"
-          },
           {
             "name": "x",
             "type": "number"
@@ -1061,7 +1028,8 @@
             "type": "world"
           }
         ]
-      }
+      },
+      "path": "~/Uranium"
     }
   ],
   "variable_elements": [

@@ -61,7 +61,7 @@
     "material": {
       "value": "ROCK"
     },
-    "tickRate": 0,
+    "tickRate": 20,
     "tickRandomly": false,
     "isReplaceable": false,
     "canProvidePower": false,
@@ -122,6 +122,9 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onTickUpdate": {
+      "name": "UraniumOnTickUpdate"
+    },
     "generateFeature": true,
     "restrictionBiomes": [],
     "blocksToReplace": [
