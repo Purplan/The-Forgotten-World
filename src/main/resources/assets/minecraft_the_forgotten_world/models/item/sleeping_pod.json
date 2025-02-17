@@ -1,6 +1,0 @@
-{
-  "parent": "item/handheld",
-  "textures": {
-    "layer0": "minecraft_the_forgotten_world:block/flag-united-states-of-america"
-  }
-}
