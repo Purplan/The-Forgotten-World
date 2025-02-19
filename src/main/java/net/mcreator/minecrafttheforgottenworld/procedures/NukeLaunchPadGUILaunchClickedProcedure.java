@@ -35,6 +35,8 @@ public class NukeLaunchPadGUILaunchClickedProcedure {
 			return;
 		if ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt ? ((Slot) _slt.get(0)).getItem() : ItemStack.EMPTY)
 				.getItem() == MinecraftTheForgottenWorldModItems.NUKE_TIER_1.get()) {
+			if (entity instanceof Player _player)
+				_player.closeContainer();
 			if (world instanceof ServerLevel _level)
 				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(new Object() {
 					double convert(String s) {
