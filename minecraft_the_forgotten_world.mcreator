@@ -940,7 +940,7 @@
           }
         ]
       },
-      "path": "~/NukeLaunchPad"
+      "path": "~/Nuke/NukeLaunchPad"
     },
     {
       "name": "NukeLaunchPadGUILaunchClicked",
@@ -967,7 +967,7 @@
           }
         ]
       },
-      "path": "~/NukeLaunchPad"
+      "path": "~/Nuke/NukeLaunchPad"
     },
     {
       "name": "HazmatSuitRecipe",
@@ -995,7 +995,7 @@
           "src/main/java/net/mcreator/minecrafttheforgottenworld/client/gui/NukeLaunchPadGUIScreen.java"
         ]
       },
-      "path": "~/NukeLaunchPad"
+      "path": "~/Nuke/NukeLaunchPad"
     },
     {
       "name": "TimeMachineOnTickUpdate",
@@ -1229,10 +1229,6 @@
         "children": []
       },
       {
-        "name": "NukeLaunchPad",
-        "children": []
-      },
-      {
         "name": "Uranium",
         "children": []
       },
@@ -1245,6 +1241,10 @@
           },
           {
             "name": "Tier 2",
+            "children": []
+          },
+          {
+            "name": "NukeLaunchPad",
             "children": []
           }
         ]
