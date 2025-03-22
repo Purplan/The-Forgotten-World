@@ -1,0 +1,19 @@
+{
+  "parent": "forge:item/default",
+  "loader": "forge:composite",
+  "children": {
+    "part1": {
+      "loader": "forge:obj",
+      "render_type": "solid",
+      "model": "minecraft_the_forgotten_world:models/item/aim120d.obj",
+      "emissive_ambient": true,
+      "textures": {
+        "#Material.006": "minecraft_the_forgotten_world:block/texture.png"
+      }
+    }
+  },
+  "textures": {
+    "particle": "minecraft_the_forgotten_world:block/texture_1515"
+  },
+  "render_type": "solid"
+}

@@ -64,7 +64,7 @@ public class NukeLaunchPadGUIButtonMessage {
 			return;
 		if (buttonID == 0) {
 
-			NukeLaunchPadGUILaunchClickedProcedure.execute(world, entity, guistate);
+			NukeLaunchPadGUILaunchClickedProcedure.execute(world, x, y, z, entity, guistate);
 		}
 	}
 

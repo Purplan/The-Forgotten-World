@@ -48,6 +48,7 @@ public class MinecraftTheForgottenWorldModItems {
 	public static final RegistryObject<Item> RUBBER_NUGGET_ITEM = REGISTRY.register("rubber_nugget_item", () -> new RubberNuggetItemItem());
 	public static final RegistryObject<Item> RUBBER_ITEM = REGISTRY.register("rubber_item", () -> new RubberItemItem());
 	public static final RegistryObject<Item> NUKE_TIER_1 = REGISTRY.register("nuke_tier_1", () -> new NukeTier1Item());
+	public static final RegistryObject<Item> NUKE_1_ANIMATION = block(MinecraftTheForgottenWorldModBlocks.NUKE_1_ANIMATION);
 
 	// Start of user code block custom items
 	// End of user code block custom items

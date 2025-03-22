@@ -962,6 +962,18 @@
             "type": "map"
           },
           {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
             "name": "world",
             "type": "world"
           }
@@ -990,8 +1002,8 @@
       "registry_name": "nuke_launch_pad_gui",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/minecrafttheforgottenworld/network/NukeLaunchPadGUIButtonMessage.java",
           "src/main/java/net/mcreator/minecrafttheforgottenworld/world/inventory/NukeLaunchPadGUIMenu.java",
+          "src/main/java/net/mcreator/minecrafttheforgottenworld/network/NukeLaunchPadGUIButtonMessage.java",
           "src/main/java/net/mcreator/minecrafttheforgottenworld/client/gui/NukeLaunchPadGUIScreen.java"
         ]
       },
@@ -1041,6 +1053,54 @@
         "files": [
           "src/main/java/net/mcreator/minecrafttheforgottenworld/item/NukeTier1Item.java",
           "src/main/resources/assets/minecraft_the_forgotten_world/models/item/nuke_tier_1.json"
+        ]
+      },
+      "path": "~/Nuke/Tier 1"
+    },
+    {
+      "name": "Nuke1Animation",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nuke_1_animation",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/minecraft_the_forgotten_world/loot_tables/blocks/nuke_1_animation.json",
+          "src/main/resources/assets/minecraft_the_forgotten_world/blockstates/nuke_1_animation.json",
+          "src/main/resources/assets/minecraft_the_forgotten_world/models/block/nuke_1_animation.json",
+          "src/main/resources/assets/minecraft_the_forgotten_world/models/item/nuke_1_animation.json",
+          "src/main/java/net/mcreator/minecrafttheforgottenworld/block/Nuke1AnimationBlock.java"
+        ]
+      },
+      "path": "~/Nuke/Tier 1"
+    },
+    {
+      "name": "Nuke1AnimationOnTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nuke_1_animation_on_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/minecrafttheforgottenworld/procedures/Nuke1AnimationOnTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
         ]
       },
       "path": "~/Nuke/Tier 1"
@@ -1122,6 +1182,7 @@
       "block.minecraft_the_forgotten_world.time_machine": "Time Machine",
       "item.minecraft.tipped_arrow.effect.radioactive_potion": "Arrow of Radioactive Potion",
       "item.minecraft_the_forgotten_world.hazmat_suit_armor_leggings": "Hazmat Suit Leggings",
+      "block.minecraft_the_forgotten_world.nuke_1_animation": "Nuke 1 Animation",
       "block.minecraft_the_forgotten_world.uk_flag": "UK Flag",
       "subtitles.technoblade": "",
       "item.minecraft_the_forgotten_world.nuke_tier_1": "Nuke Tier 1",
@@ -1175,6 +1236,7 @@
       "block.minecraft_the_forgotten_world.time_machine": "Time Machine",
       "item.minecraft.tipped_arrow.effect.radioactive_potion": "Arrow of Radioactive Potion",
       "item.minecraft_the_forgotten_world.hazmat_suit_armor_leggings": "Hazmat Suit Leggings",
+      "block.minecraft_the_forgotten_world.nuke_1_animation": "Nuke 1 Animation",
       "block.minecraft_the_forgotten_world.uk_flag": "UK Flag",
       "subtitles.technoblade": "",
       "item.minecraft_the_forgotten_world.nuke_tier_1": "Nuke Tier 1",
