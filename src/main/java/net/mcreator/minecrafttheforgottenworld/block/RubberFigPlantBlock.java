@@ -1,23 +1,7 @@
 
 package net.mcreator.minecrafttheforgottenworld.block;
 
-import net.minecraftforge.common.PlantType;
-import net.minecraftforge.common.ForgeHooks;
-
-import net.minecraft.world.level.material.PushReaction;
-import net.minecraft.world.level.material.MapColor;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.SugarCaneBlock;
-import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.BonemealableBlock;
-import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.util.RandomSource;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.core.Direction;
-import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 
 public class RubberFigPlantBlock extends SugarCaneBlock implements BonemealableBlock {
 	public RubberFigPlantBlock() {

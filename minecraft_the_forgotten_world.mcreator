@@ -3,7 +3,7 @@
     {
       "name": "RadioactiveWater",
       "type": "fluid",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "radioactive_water",
       "metadata": {
@@ -251,7 +251,7 @@
     {
       "name": "TimeMachine",
       "type": "block",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "time_machine",
       "metadata": {
@@ -430,7 +430,7 @@
     {
       "name": "BritishAC74Bomb",
       "type": "block",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "british_ac_74_bomb",
       "metadata": {
@@ -506,7 +506,7 @@
     {
       "name": "BritishAC79LandMine",
       "type": "block",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "british_ac_79_land_mine",
       "metadata": {
@@ -731,7 +731,7 @@
     {
       "name": "RubberFigPlant",
       "type": "plant",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "rubber_fig_plant",
       "metadata": {
@@ -817,7 +817,8 @@
             "type": "map"
           }
         ]
-      }
+      },
+      "path": "~/SleepingPod"
     },
     {
       "name": "HazmatSuitHelmetRecipe",
@@ -861,7 +862,8 @@
             "type": "entity"
           }
         ]
-      }
+      },
+      "path": "~/SleepingPod"
     },
     {
       "name": "UraniumOnTickUpdate",
@@ -939,7 +941,8 @@
             "type": "world"
           }
         ]
-      }
+      },
+      "path": "~/NukeLaunchPad"
     },
     {
       "name": "NukeLaunchPadGUILaunchClicked",
@@ -961,23 +964,12 @@
             "type": "map"
           },
           {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
             "name": "world",
             "type": "world"
           }
         ]
-      }
+      },
+      "path": "~/NukeLaunchPad"
     },
     {
       "name": "HazmatSuitRecipe",
@@ -1004,7 +996,8 @@
           "src/main/java/net/mcreator/minecrafttheforgottenworld/network/NukeLaunchPadGUIButtonMessage.java",
           "src/main/java/net/mcreator/minecrafttheforgottenworld/client/gui/NukeLaunchPadGUIScreen.java"
         ]
-      }
+      },
+      "path": "~/NukeLaunchPad"
     },
     {
       "name": "TimeMachineOnTickUpdate",
@@ -1228,9 +1221,9 @@
       "death.attack.radioactive_water_damage.player": "%1$s died whilst trying to escape %2$s",
       "gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.NukeLaunchPadInputX": "X Coordinate",
       "item.minecraft_the_forgotten_world.technoblade.desc": "\"Mega Walls\" by Technoblade",
-      "block.minecraft_the_forgotten_world.time_machine": "Time Machine",
-      "item.minecraft.lingering_potion.effect.radioactive_potion": "Lingering Potion of Radioactive Potion",
       "block.minecraft_the_forgotten_world.uranium": "Uranium Ore",
+      "item.minecraft.lingering_potion.effect.radioactive_potion": "Lingering Potion of Radioactive Potion",
+      "block.minecraft_the_forgotten_world.time_machine": "Time Machine",
       "item.minecraft.tipped_arrow.effect.radioactive_potion": "Arrow of Radioactive Potion",
       "item.minecraft_the_forgotten_world.hazmat_suit_armor_leggings": "Hazmat Suit Leggings",
       "block.minecraft_the_forgotten_world.nuke_1_animation": "Nuke 1 Animation",
