@@ -1,8 +1,6 @@
 package net.mcreator.minecrafttheforgottenworld.procedures;
 
-import net.minecraft.world.entity.Entity;
-
-import net.mcreator.minecrafttheforgottenworld.network.MinecraftTheForgottenWorldModVariables;
+import net.minecraftforge.eventbus.api.Event;
 
 public class SleepingPodGUIThisGUIIsClosedProcedure {
 	public static void execute(Entity entity) {
