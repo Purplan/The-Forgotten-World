@@ -1,17 +1,17 @@
 package net.mcreator.minecrafttheforgottenworld.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.world.entity.Entity;
+
+import net.mcreator.minecrafttheforgottenworld.network.MinecraftTheForgottenWorldModVariables;
 
 public class SleepingPodGUIThisGUIIsClosedProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
 		{
-			boolean _setval = false;
-			entity.getCapability(MinecraftTheForgottenWorldModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.has_radioactivity_protection = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			MinecraftTheForgottenWorldModVariables.PlayerVariables _vars = entity.getData(MinecraftTheForgottenWorldModVariables.PLAYER_VARIABLES);
+			_vars.has_radioactivity_protection = false;
+			_vars.syncPlayerVariables(entity);
 		}
 	}
 }

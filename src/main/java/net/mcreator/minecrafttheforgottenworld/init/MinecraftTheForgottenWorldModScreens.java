@@ -4,23 +4,19 @@
  */
 package net.mcreator.minecrafttheforgottenworld.init;
 
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.api.distmarker.Dist;
-
-import net.minecraft.client.gui.screens.MenuScreens;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.api.distmarker.Dist;
 
 import net.mcreator.minecrafttheforgottenworld.client.gui.TimeMachineGUIScreen;
 import net.mcreator.minecrafttheforgottenworld.client.gui.NukeLaunchPadGUIScreen;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class MinecraftTheForgottenWorldModScreens {
 	@SubscribeEvent
-	public static void clientLoad(FMLClientSetupEvent event) {
-		event.enqueueWork(() -> {
-			MenuScreens.register(MinecraftTheForgottenWorldModMenus.TIME_MACHINE_GUI.get(), TimeMachineGUIScreen::new);
-			MenuScreens.register(MinecraftTheForgottenWorldModMenus.NUKE_LAUNCH_PAD_GUI.get(), NukeLaunchPadGUIScreen::new);
-		});
+	public static void clientLoad(RegisterMenuScreensEvent event) {
+		event.register(MinecraftTheForgottenWorldModMenus.TIME_MACHINE_GUI.get(), TimeMachineGUIScreen::new);
+		event.register(MinecraftTheForgottenWorldModMenus.NUKE_LAUNCH_PAD_GUI.get(), NukeLaunchPadGUIScreen::new);
 	}
 }

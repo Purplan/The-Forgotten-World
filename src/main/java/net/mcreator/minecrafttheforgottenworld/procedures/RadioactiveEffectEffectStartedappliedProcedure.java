@@ -16,7 +16,7 @@ public class RadioactiveEffectEffectStartedappliedProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("minecraft_the_forgotten_world:radioactive_water_damage")))), 4);
+		entity.hurt(new DamageSource(world.holderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("minecraft_the_forgotten_world:radioactive_water_damage")))), 4);
 		MinecraftTheForgottenWorldMod.queueServerWork(40, () -> {
 			if (entity instanceof Player _player && !_player.level().isClientSide())
 				_player.displayClientMessage(Component.literal("Body Radiation: 5"), false);
@@ -38,7 +38,7 @@ public class RadioactiveEffectEffectStartedappliedProcedure {
 				_player.displayClientMessage(Component.literal("Body Radiation: 50"), false);
 		});
 		MinecraftTheForgottenWorldMod.queueServerWork(240, () -> {
-			entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC)), 5000);
+			entity.hurt(new DamageSource(world.holderOrThrow(DamageTypes.GENERIC)), 5000);
 		});
 	}
 }

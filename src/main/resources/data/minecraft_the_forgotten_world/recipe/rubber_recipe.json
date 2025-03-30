@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "experience": 1,
+  "cookingtime": 99,
+  "ingredient": {
+    "item": "minecraft_the_forgotten_world:rubber_nugget_item"
+  },
+  "result": {
+    "id": "minecraft_the_forgotten_world:rubber_item"
+  }
+}

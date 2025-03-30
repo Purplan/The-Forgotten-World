@@ -1,12 +1,20 @@
 
 package net.mcreator.minecrafttheforgottenworld.item;
 
-import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.core.registries.Registries;
 
-public class TechnobladeItem extends RecordItem {
+import net.mcreator.minecrafttheforgottenworld.procedures.TechnobladeRightclickedOnBlockProcedure;
+import net.mcreator.minecrafttheforgottenworld.MinecraftTheForgottenWorldMod;
 
+public class TechnobladeItem extends Item {
 	public TechnobladeItem() {
-		super(0, () -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("minecraft_the_forgotten_world:technoblade")), new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON), 1980);
+		super(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON).jukeboxPlayable(ResourceKey.create(Registries.JUKEBOX_SONG, ResourceLocation.fromNamespaceAndPath(MinecraftTheForgottenWorldMod.MODID, "technoblade"))));
 	}
 
 	@Override
@@ -15,5 +23,4 @@ public class TechnobladeItem extends RecordItem {
 		TechnobladeRightclickedOnBlockProcedure.execute(context.getLevel(), context.getClickedPos().getX(), context.getClickedPos().getY(), context.getClickedPos().getZ());
 		return InteractionResult.SUCCESS;
 	}
-
 }

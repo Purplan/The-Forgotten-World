@@ -1,5 +1,7 @@
 package net.mcreator.minecrafttheforgottenworld.client.gui;
 
+import net.neoforged.neoforge.network.PacketDistributor;
+
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
@@ -13,7 +15,6 @@ import net.minecraft.client.Minecraft;
 
 import net.mcreator.minecrafttheforgottenworld.world.inventory.NukeLaunchPadGUIMenu;
 import net.mcreator.minecrafttheforgottenworld.network.NukeLaunchPadGUIButtonMessage;
-import net.mcreator.minecrafttheforgottenworld.MinecraftTheForgottenWorldMod;
 
 import java.util.HashMap;
 
@@ -40,11 +41,11 @@ public class NukeLaunchPadGUIScreen extends AbstractContainerScreen<NukeLaunchPa
 		this.imageHeight = 180;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("minecraft_the_forgotten_world:textures/screens/nuke_launch_pad_gui.png");
+	private static final ResourceLocation texture = ResourceLocation.parse("minecraft_the_forgotten_world:textures/screens/nuke_launch_pad_gui.png");
 
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(guiGraphics);
+		this.renderBackground(guiGraphics, mouseX, mouseY, partialTicks);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		NukeLaunchPadInputX.render(guiGraphics, mouseX, mouseY, partialTicks);
 		NukeLaunchPadInputY.render(guiGraphics, mouseX, mouseY, partialTicks);
@@ -77,14 +78,6 @@ public class NukeLaunchPadGUIScreen extends AbstractContainerScreen<NukeLaunchPa
 	}
 
 	@Override
-	public void containerTick() {
-		super.containerTick();
-		NukeLaunchPadInputX.tick();
-		NukeLaunchPadInputY.tick();
-		NukeLaunchPadInputZ.tick();
-	}
-
-	@Override
 	public void resize(Minecraft minecraft, int width, int height) {
 		String NukeLaunchPadInputXValue = NukeLaunchPadInputX.getValue();
 		String NukeLaunchPadInputYValue = NukeLaunchPadInputY.getValue();
@@ -114,16 +107,16 @@ public class NukeLaunchPadGUIScreen extends AbstractContainerScreen<NukeLaunchPa
 			}
 
 			@Override
-			public void moveCursorTo(int pos) {
-				super.moveCursorTo(pos);
+			public void moveCursorTo(int pos, boolean flag) {
+				super.moveCursorTo(pos, flag);
 				if (getValue().isEmpty())
 					setSuggestion(Component.translatable("gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.NukeLaunchPadInputX").getString());
 				else
 					setSuggestion(null);
 			}
 		};
-		NukeLaunchPadInputX.setSuggestion(Component.translatable("gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.NukeLaunchPadInputX").getString());
 		NukeLaunchPadInputX.setMaxLength(32767);
+		NukeLaunchPadInputX.setSuggestion(Component.translatable("gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.NukeLaunchPadInputX").getString());
 		guistate.put("text:NukeLaunchPadInputX", NukeLaunchPadInputX);
 		this.addWidget(this.NukeLaunchPadInputX);
 		NukeLaunchPadInputY = new EditBox(this.font, this.leftPos + 7, this.topPos + 38, 118, 18, Component.translatable("gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.NukeLaunchPadInputY")) {
@@ -137,16 +130,16 @@ public class NukeLaunchPadGUIScreen extends AbstractContainerScreen<NukeLaunchPa
 			}
 
 			@Override
-			public void moveCursorTo(int pos) {
-				super.moveCursorTo(pos);
+			public void moveCursorTo(int pos, boolean flag) {
+				super.moveCursorTo(pos, flag);
 				if (getValue().isEmpty())
 					setSuggestion(Component.translatable("gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.NukeLaunchPadInputY").getString());
 				else
 					setSuggestion(null);
 			}
 		};
-		NukeLaunchPadInputY.setSuggestion(Component.translatable("gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.NukeLaunchPadInputY").getString());
 		NukeLaunchPadInputY.setMaxLength(32767);
+		NukeLaunchPadInputY.setSuggestion(Component.translatable("gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.NukeLaunchPadInputY").getString());
 		guistate.put("text:NukeLaunchPadInputY", NukeLaunchPadInputY);
 		this.addWidget(this.NukeLaunchPadInputY);
 		NukeLaunchPadInputZ = new EditBox(this.font, this.leftPos + 7, this.topPos + 59, 118, 18, Component.translatable("gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.NukeLaunchPadInputZ")) {
@@ -160,21 +153,21 @@ public class NukeLaunchPadGUIScreen extends AbstractContainerScreen<NukeLaunchPa
 			}
 
 			@Override
-			public void moveCursorTo(int pos) {
-				super.moveCursorTo(pos);
+			public void moveCursorTo(int pos, boolean flag) {
+				super.moveCursorTo(pos, flag);
 				if (getValue().isEmpty())
 					setSuggestion(Component.translatable("gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.NukeLaunchPadInputZ").getString());
 				else
 					setSuggestion(null);
 			}
 		};
-		NukeLaunchPadInputZ.setSuggestion(Component.translatable("gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.NukeLaunchPadInputZ").getString());
 		NukeLaunchPadInputZ.setMaxLength(32767);
+		NukeLaunchPadInputZ.setSuggestion(Component.translatable("gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.NukeLaunchPadInputZ").getString());
 		guistate.put("text:NukeLaunchPadInputZ", NukeLaunchPadInputZ);
 		this.addWidget(this.NukeLaunchPadInputZ);
 		button_launch = Button.builder(Component.translatable("gui.minecraft_the_forgotten_world.nuke_launch_pad_gui.button_launch"), e -> {
 			if (true) {
-				MinecraftTheForgottenWorldMod.PACKET_HANDLER.sendToServer(new NukeLaunchPadGUIButtonMessage(0, x, y, z));
+				PacketDistributor.sendToServer(new NukeLaunchPadGUIButtonMessage(0, x, y, z));
 				NukeLaunchPadGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}).bounds(this.leftPos + 131, this.topPos + 51, 56, 20).build();

@@ -4,9 +4,8 @@
  */
 package net.mcreator.minecrafttheforgottenworld.init;
 
-import net.minecraftforge.registries.RegistryObject;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.DeferredBlock;
 
 import net.minecraft.world.level.block.Block;
 
@@ -22,16 +21,16 @@ import net.mcreator.minecrafttheforgottenworld.block.BritishAC74BombBlock;
 import net.mcreator.minecrafttheforgottenworld.MinecraftTheForgottenWorldMod;
 
 public class MinecraftTheForgottenWorldModBlocks {
-	public static final DeferredRegister<Block> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, MinecraftTheForgottenWorldMod.MODID);
-	public static final RegistryObject<Block> RADIOACTIVE_WATER = REGISTRY.register("radioactive_water", () -> new RadioactiveWaterBlock());
-	public static final RegistryObject<Block> TIME_MACHINE = REGISTRY.register("time_machine", () -> new TimeMachineBlock());
-	public static final RegistryObject<Block> USA_FLAG = REGISTRY.register("usa_flag", () -> new USAFlagBlock());
-	public static final RegistryObject<Block> URANIUM = REGISTRY.register("uranium", () -> new UraniumBlock());
-	public static final RegistryObject<Block> BRITISH_AC_74_BOMB = REGISTRY.register("british_ac_74_bomb", () -> new BritishAC74BombBlock());
-	public static final RegistryObject<Block> BRITISH_AC_79_LAND_MINE = REGISTRY.register("british_ac_79_land_mine", () -> new BritishAC79LandMineBlock());
-	public static final RegistryObject<Block> UK_FLAG = REGISTRY.register("uk_flag", () -> new UKFlagBlock());
-	public static final RegistryObject<Block> RUBBER_FIG_PLANT = REGISTRY.register("rubber_fig_plant", () -> new RubberFigPlantBlock());
-	public static final RegistryObject<Block> NUKE_1_ANIMATION = REGISTRY.register("nuke_1_animation", () -> new Nuke1AnimationBlock());
+	public static final DeferredRegister.Blocks REGISTRY = DeferredRegister.createBlocks(MinecraftTheForgottenWorldMod.MODID);
+	public static final DeferredBlock<Block> RADIOACTIVE_WATER = REGISTRY.register("radioactive_water", RadioactiveWaterBlock::new);
+	public static final DeferredBlock<Block> TIME_MACHINE = REGISTRY.register("time_machine", TimeMachineBlock::new);
+	public static final DeferredBlock<Block> USA_FLAG = REGISTRY.register("usa_flag", USAFlagBlock::new);
+	public static final DeferredBlock<Block> URANIUM = REGISTRY.register("uranium", UraniumBlock::new);
+	public static final DeferredBlock<Block> BRITISH_AC_74_BOMB = REGISTRY.register("british_ac_74_bomb", BritishAC74BombBlock::new);
+	public static final DeferredBlock<Block> BRITISH_AC_79_LAND_MINE = REGISTRY.register("british_ac_79_land_mine", BritishAC79LandMineBlock::new);
+	public static final DeferredBlock<Block> UK_FLAG = REGISTRY.register("uk_flag", UKFlagBlock::new);
+	public static final DeferredBlock<Block> RUBBER_FIG_PLANT = REGISTRY.register("rubber_fig_plant", RubberFigPlantBlock::new);
+	public static final DeferredBlock<Block> NUKE_1_ANIMATION = REGISTRY.register("nuke_1_animation", Nuke1AnimationBlock::new);
 	// Start of user code block custom blocks
 	// End of user code block custom blocks
 }

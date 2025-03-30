@@ -1,9 +1,29 @@
 
 package net.mcreator.minecrafttheforgottenworld.block;
 
-import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
+import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.FallingBlock;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.util.RandomSource;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.core.BlockPos;
+
+import net.mcreator.minecrafttheforgottenworld.procedures.Nuke1AnimationOnTickUpdateProcedure;
+
+import com.mojang.serialization.MapCodec;
 
 public class Nuke1AnimationBlock extends FallingBlock {
+	public static final MapCodec<Nuke1AnimationBlock> CODEC = simpleCodec(properties -> new Nuke1AnimationBlock());
+
+	public MapCodec<Nuke1AnimationBlock> codec() {
+		return CODEC;
+	}
+
 	public Nuke1AnimationBlock() {
 		super(BlockBehaviour.Properties.of().sound(SoundType.GRAVEL).strength(1f, 10f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 	}
@@ -26,9 +46,6 @@ public class Nuke1AnimationBlock extends FallingBlock {
 	@Override
 	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
 		super.tick(blockstate, world, pos, random);
-		int x = pos.getX();
-		int y = pos.getY();
-		int z = pos.getZ();
-		Nuke1AnimationOnTickUpdateProcedure.execute(world, x, y, z);
+		Nuke1AnimationOnTickUpdateProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 }

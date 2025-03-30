@@ -4,16 +4,16 @@
  */
 package net.mcreator.minecrafttheforgottenworld.init;
 
-import net.minecraftforge.registries.RegistryObject;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 import net.minecraft.world.effect.MobEffect;
+import net.minecraft.core.registries.Registries;
 
 import net.mcreator.minecrafttheforgottenworld.potion.RadioactiveEffectMobEffect;
 import net.mcreator.minecrafttheforgottenworld.MinecraftTheForgottenWorldMod;
 
 public class MinecraftTheForgottenWorldModMobEffects {
-	public static final DeferredRegister<MobEffect> REGISTRY = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, MinecraftTheForgottenWorldMod.MODID);
-	public static final RegistryObject<MobEffect> RADIOACTIVE_EFFECT = REGISTRY.register("radioactive_effect", () -> new RadioactiveEffectMobEffect());
+	public static final DeferredRegister<MobEffect> REGISTRY = DeferredRegister.create(Registries.MOB_EFFECT, MinecraftTheForgottenWorldMod.MODID);
+	public static final DeferredHolder<MobEffect, MobEffect> RADIOACTIVE_EFFECT = REGISTRY.register("radioactive_effect", () -> new RadioactiveEffectMobEffect());
 }

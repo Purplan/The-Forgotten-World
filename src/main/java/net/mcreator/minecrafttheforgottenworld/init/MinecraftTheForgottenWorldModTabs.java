@@ -4,11 +4,11 @@
  */
 package net.mcreator.minecrafttheforgottenworld.init;
 
-import net.minecraftforge.registries.RegistryObject;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -18,10 +18,10 @@ import net.minecraft.core.registries.Registries;
 
 import net.mcreator.minecrafttheforgottenworld.MinecraftTheForgottenWorldMod;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
 public class MinecraftTheForgottenWorldModTabs {
 	public static final DeferredRegister<CreativeModeTab> REGISTRY = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MinecraftTheForgottenWorldMod.MODID);
-	public static final RegistryObject<CreativeModeTab> USA = REGISTRY.register("usa",
+	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> USA = REGISTRY.register("usa",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.minecraft_the_forgotten_world.usa")).icon(() -> new ItemStack(MinecraftTheForgottenWorldModBlocks.USA_FLAG.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(MinecraftTheForgottenWorldModItems.RADIOACTIVE_SWORD.get());
 			}).withSearchBar().build());

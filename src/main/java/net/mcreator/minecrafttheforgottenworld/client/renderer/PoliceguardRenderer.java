@@ -18,6 +18,6 @@ public class PoliceguardRenderer extends HumanoidMobRenderer<PoliceguardEntity, 
 
 	@Override
 	public ResourceLocation getTextureLocation(PoliceguardEntity entity) {
-		return new ResourceLocation("minecraft_the_forgotten_world:textures/entities/player_police.png");
+		return ResourceLocation.parse("minecraft_the_forgotten_world:textures/entities/player_police.png");
 	}
 }

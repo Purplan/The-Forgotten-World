@@ -1,17 +1,20 @@
 package net.mcreator.minecrafttheforgottenworld.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.client.gui.components.Checkbox;
+
+import net.mcreator.minecrafttheforgottenworld.network.MinecraftTheForgottenWorldModVariables;
+
+import java.util.HashMap;
 
 public class SleepingPodGUIWhileThisGUIIsOpenTickProcedure {
 	public static void execute(Entity entity, HashMap guistate) {
 		if (entity == null || guistate == null)
 			return;
 		{
-			boolean _setval = guistate.containsKey("checkbox:SleepingPodRadioactiveProtection") && ((Checkbox) guistate.get("checkbox:SleepingPodRadioactiveProtection")).selected();
-			entity.getCapability(MinecraftTheForgottenWorldModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.has_radioactivity_protection = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			MinecraftTheForgottenWorldModVariables.PlayerVariables _vars = entity.getData(MinecraftTheForgottenWorldModVariables.PLAYER_VARIABLES);
+			_vars.has_radioactivity_protection = guistate.containsKey("checkbox:SleepingPodRadioactiveProtection") && ((Checkbox) guistate.get("checkbox:SleepingPodRadioactiveProtection")).selected();
+			_vars.syncPlayerVariables(entity);
 		}
 	}
 }

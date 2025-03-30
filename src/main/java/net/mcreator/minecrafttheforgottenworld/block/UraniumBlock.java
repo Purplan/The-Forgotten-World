@@ -1,7 +1,18 @@
 
 package net.mcreator.minecrafttheforgottenworld.block;
 
-import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.util.RandomSource;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.core.BlockPos;
+
+import net.mcreator.minecrafttheforgottenworld.procedures.UraniumOnTickUpdateProcedure;
 
 public class UraniumBlock extends Block {
 	public UraniumBlock() {
@@ -22,10 +33,7 @@ public class UraniumBlock extends Block {
 	@Override
 	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
 		super.tick(blockstate, world, pos, random);
-		int x = pos.getX();
-		int y = pos.getY();
-		int z = pos.getZ();
-		UraniumOnTickUpdateProcedure.execute(world, x, y, z);
+		UraniumOnTickUpdateProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 		world.scheduleTick(pos, this, 20);
 	}
 }

@@ -21,8 +21,7 @@ public class UraniumOnTickUpdateProcedure {
 			for (Entity entityiterator : _entfound) {
 				if (!world.isClientSide() && world.getServer() != null)
 					world.getServer().getPlayerList().broadcastSystemMessage(Component.literal("Watch out!"), false);
-				entityiterator.hurt(
-						new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("minecraft_the_forgotten_world:radioactive_water_damage")))), 2);
+				entityiterator.hurt(new DamageSource(world.holderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.parse("minecraft_the_forgotten_world:radioactive_water_damage")))), 2);
 			}
 		}
 	}

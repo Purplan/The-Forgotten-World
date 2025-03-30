@@ -3,10 +3,10 @@ package net.mcreator.minecrafttheforgottenworld.command;
 
 import org.checkerframework.checker.units.qual.s;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.RegisterCommandsEvent;
-import net.minecraftforge.common.util.FakePlayerFactory;
+import net.neoforged.neoforge.event.RegisterCommandsEvent;
+import net.neoforged.neoforge.common.util.FakePlayerFactory;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.Entity;
@@ -16,7 +16,7 @@ import net.minecraft.commands.Commands;
 
 import net.mcreator.minecrafttheforgottenworld.procedures.OpenLaunchPadGUIProcedure;
 
-@Mod.EventBusSubscriber
+@EventBusSubscriber
 public class GuiopenerCommand {
 	@SubscribeEvent
 	public static void registerCommand(RegisterCommandsEvent event) {

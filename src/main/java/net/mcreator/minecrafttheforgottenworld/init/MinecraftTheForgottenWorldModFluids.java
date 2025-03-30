@@ -4,16 +4,16 @@
  */
 package net.mcreator.minecrafttheforgottenworld.init;
 
-import net.minecraftforge.registries.RegistryObject;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.api.distmarker.Dist;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.api.distmarker.Dist;
 
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FlowingFluid;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 
@@ -21,11 +21,11 @@ import net.mcreator.minecrafttheforgottenworld.fluid.RadioactiveWaterFluid;
 import net.mcreator.minecrafttheforgottenworld.MinecraftTheForgottenWorldMod;
 
 public class MinecraftTheForgottenWorldModFluids {
-	public static final DeferredRegister<Fluid> REGISTRY = DeferredRegister.create(ForgeRegistries.FLUIDS, MinecraftTheForgottenWorldMod.MODID);
-	public static final RegistryObject<FlowingFluid> RADIOACTIVE_WATER = REGISTRY.register("radioactive_water", () -> new RadioactiveWaterFluid.Source());
-	public static final RegistryObject<FlowingFluid> FLOWING_RADIOACTIVE_WATER = REGISTRY.register("flowing_radioactive_water", () -> new RadioactiveWaterFluid.Flowing());
+	public static final DeferredRegister<Fluid> REGISTRY = DeferredRegister.create(BuiltInRegistries.FLUID, MinecraftTheForgottenWorldMod.MODID);
+	public static final DeferredHolder<Fluid, FlowingFluid> RADIOACTIVE_WATER = REGISTRY.register("radioactive_water", () -> new RadioactiveWaterFluid.Source());
+	public static final DeferredHolder<Fluid, FlowingFluid> FLOWING_RADIOACTIVE_WATER = REGISTRY.register("flowing_radioactive_water", () -> new RadioactiveWaterFluid.Flowing());
 
-	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+	@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 	public static class FluidsClientSideHandler {
 		@SubscribeEvent
 		public static void clientSetup(FMLClientSetupEvent event) {

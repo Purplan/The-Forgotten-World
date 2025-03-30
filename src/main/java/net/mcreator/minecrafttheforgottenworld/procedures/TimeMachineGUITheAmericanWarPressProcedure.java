@@ -1,11 +1,11 @@
 package net.mcreator.minecrafttheforgottenworld.procedures;
 
-import net.minecraftforge.items.IItemHandlerModifiable;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
+import net.neoforged.neoforge.items.IItemHandlerModifiable;
+import net.neoforged.neoforge.common.extensions.ILevelExtension;
+import net.neoforged.neoforge.capabilities.Capabilities;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.Vec2;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
@@ -36,22 +36,15 @@ public class TimeMachineGUITheAmericanWarPressProcedure {
 			_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 					"setblock ~ ~ ~ air");
 		MinecraftTheForgottenWorldMod.queueServerWork(2, () -> {
-			{
-				BlockEntity _ent = world.getBlockEntity(BlockPos.containing(x, y, z));
-				if (_ent != null) {
-					final int _slotid = 36;
-					final ItemStack _setstack = new ItemStack(MinecraftTheForgottenWorldModBlocks.TIME_MACHINE.get()).copy();
-					_setstack.setCount(1);
-					_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable)
-							((IItemHandlerModifiable) capability).setStackInSlot(_slotid, _setstack);
-					});
-				}
+			if (world instanceof ILevelExtension _ext && _ext.getCapability(Capabilities.ItemHandler.BLOCK, BlockPos.containing(x, y, z), null) instanceof IItemHandlerModifiable _itemHandlerModifiable) {
+				ItemStack _setstack = new ItemStack(MinecraftTheForgottenWorldModBlocks.TIME_MACHINE.get()).copy();
+				_setstack.setCount(1);
+				_itemHandlerModifiable.setStackInSlot(36, _setstack);
 			}
 		});
 		MinecraftTheForgottenWorldMod.queueServerWork(1, () -> {
 			if (entity instanceof ServerPlayer _player && !_player.level().isClientSide()) {
-				ResourceKey<Level> destinationType = ResourceKey.create(Registries.DIMENSION, new ResourceLocation("minecraft_the_forgotten_world:the_forgotten_world"));
+				ResourceKey<Level> destinationType = ResourceKey.create(Registries.DIMENSION, ResourceLocation.parse("minecraft_the_forgotten_world:the_forgotten_world"));
 				if (_player.level().dimension() == destinationType)
 					return;
 				ServerLevel nextLevel = _player.server.getLevel(destinationType);
@@ -60,7 +53,7 @@ public class TimeMachineGUITheAmericanWarPressProcedure {
 					_player.teleportTo(nextLevel, _player.getX(), _player.getY(), _player.getZ(), _player.getYRot(), _player.getXRot());
 					_player.connection.send(new ClientboundPlayerAbilitiesPacket(_player.getAbilities()));
 					for (MobEffectInstance _effectinstance : _player.getActiveEffects())
-						_player.connection.send(new ClientboundUpdateMobEffectPacket(_player.getId(), _effectinstance));
+						_player.connection.send(new ClientboundUpdateMobEffectPacket(_player.getId(), _effectinstance, false));
 					_player.connection.send(new ClientboundLevelEventPacket(1032, BlockPos.ZERO, 0, false));
 				}
 			}

@@ -1,6 +1,33 @@
 package net.mcreator.minecrafttheforgottenworld.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import org.checkerframework.checker.units.qual.s;
+
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.Vec2;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.network.chat.Component;
+import net.minecraft.core.BlockPos;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.CommandSource;
+import net.minecraft.client.gui.components.EditBox;
+
+import net.mcreator.minecrafttheforgottenworld.init.MinecraftTheForgottenWorldModMobEffects;
+import net.mcreator.minecrafttheforgottenworld.init.MinecraftTheForgottenWorldModItems;
+import net.mcreator.minecrafttheforgottenworld.init.MinecraftTheForgottenWorldModBlocks;
+
+import java.util.function.Supplier;
+import java.util.Map;
+import java.util.List;
+import java.util.HashMap;
+import java.util.Comparator;
 
 public class NukeLaunchPadGUILaunchClickedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, HashMap guistate) {
@@ -254,6 +281,14 @@ public class NukeLaunchPadGUILaunchClickedProcedure {
 				}.convert(guistate.containsKey("text:NukeLaunchPadInputZ") ? ((EditBox) guistate.get("text:NukeLaunchPadInputZ")).getValue() : "") - 0)), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null)
 						.withSuppressedOutput(), "forceload add ~ ~ ~");
 			world.setBlock(BlockPos.containing(x, y + 50, z), MinecraftTheForgottenWorldModBlocks.NUKE_1_ANIMATION.get().defaultBlockState(), 3);
+			{
+				final Vec3 _center = new Vec3(x, y, z);
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(100 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+				for (Entity entityiterator : _entfound) {
+					if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
+						_entity.addEffect(new MobEffectInstance(MinecraftTheForgottenWorldModMobEffects.RADIOACTIVE_EFFECT, 3600, 1, false, false));
+				}
+			}
 		}
 	}
 }

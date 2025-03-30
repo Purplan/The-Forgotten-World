@@ -1,7 +1,24 @@
 
 package net.mcreator.minecrafttheforgottenworld.block;
 
-import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
+import net.neoforged.neoforge.common.CommonHooks;
+
+import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.SugarCaneBlock;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.BonemealableBlock;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.util.RandomSource;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.core.Direction;
+import net.minecraft.core.BlockPos;
 
 public class RubberFigPlantBlock extends SugarCaneBlock implements BonemealableBlock {
 	public RubberFigPlantBlock() {
@@ -18,9 +35,17 @@ public class RubberFigPlantBlock extends SugarCaneBlock implements BonemealableB
 		return 60;
 	}
 
+	private boolean canPlantTypeSurvive(BlockState state, LevelReader world, BlockPos pos) {
+		return state.is(BlockTags.DIRT) || state.getBlock() == Blocks.FARMLAND;
+	}
+
 	@Override
-	public PlantType getPlantType(BlockGetter world, BlockPos pos) {
-		return PlantType.PLAINS;
+	public boolean canSurvive(BlockState blockstate, LevelReader world, BlockPos pos) {
+		BlockPos posbelow = pos.below();
+		BlockState statebelow = world.getBlockState(posbelow);
+		if (this.canPlantTypeSurvive(statebelow, world, posbelow))
+			return true;
+		return super.canSurvive(blockstate, world, pos);
 	}
 
 	@Override
@@ -30,9 +55,10 @@ public class RubberFigPlantBlock extends SugarCaneBlock implements BonemealableB
 			for (; world.getBlockState(pos.below(i)).is(this); ++i);
 			if (i < 3) {
 				int j = blockstate.getValue(AGE);
-				if (ForgeHooks.onCropsGrowPre(world, pos, blockstate, true)) {
+				if (CommonHooks.canCropGrow(world, pos, blockstate, true)) {
 					if (j == 15) {
 						world.setBlockAndUpdate(pos.above(), defaultBlockState());
+						CommonHooks.fireCropGrowPost(world, pos.above(), defaultBlockState());
 						world.setBlock(pos, blockstate.setValue(AGE, 0), 4);
 					} else {
 						world.setBlock(pos, blockstate.setValue(AGE, j + 1), 4);
@@ -43,7 +69,7 @@ public class RubberFigPlantBlock extends SugarCaneBlock implements BonemealableB
 	}
 
 	@Override
-	public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState blockstate, boolean clientSide) {
+	public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState blockstate) {
 		return true;
 	}
 

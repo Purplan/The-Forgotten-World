@@ -1,8 +1,20 @@
 
 package net.mcreator.minecrafttheforgottenworld.fluid;
 
-public abstract class RadioactiveWaterFluid extends ForgeFlowingFluid {
-	public static final ForgeFlowingFluid.Properties PROPERTIES = new ForgeFlowingFluid.Properties(() -> MinecraftTheForgottenWorldModFluidTypes.RADIOACTIVE_WATER_TYPE.get(), () -> MinecraftTheForgottenWorldModFluids.RADIOACTIVE_WATER.get(),
+import net.neoforged.neoforge.fluids.BaseFlowingFluid;
+
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluid;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.LiquidBlock;
+
+import net.mcreator.minecrafttheforgottenworld.init.MinecraftTheForgottenWorldModItems;
+import net.mcreator.minecrafttheforgottenworld.init.MinecraftTheForgottenWorldModFluids;
+import net.mcreator.minecrafttheforgottenworld.init.MinecraftTheForgottenWorldModFluidTypes;
+import net.mcreator.minecrafttheforgottenworld.init.MinecraftTheForgottenWorldModBlocks;
+
+public abstract class RadioactiveWaterFluid extends BaseFlowingFluid {
+	public static final BaseFlowingFluid.Properties PROPERTIES = new BaseFlowingFluid.Properties(() -> MinecraftTheForgottenWorldModFluidTypes.RADIOACTIVE_WATER_TYPE.get(), () -> MinecraftTheForgottenWorldModFluids.RADIOACTIVE_WATER.get(),
 			() -> MinecraftTheForgottenWorldModFluids.FLOWING_RADIOACTIVE_WATER.get()).explosionResistance(100f).bucket(() -> MinecraftTheForgottenWorldModItems.RADIOACTIVE_WATER_BUCKET.get())
 			.block(() -> (LiquidBlock) MinecraftTheForgottenWorldModBlocks.RADIOACTIVE_WATER.get());
 
